@@ -72,7 +72,7 @@ export const MOCK_PROJECTS: PortfolioItem[] = [
         id: '9',
         title: 'Aevloc',
         url: 'https://aevloc.com',
-        description: 'Neo-Bank For Real Estate Investors. Smart Contracts For Smart Properties.',
+        description: 'A Super Smart Digital Accountant For Real Estate Investors.',
         status: 'POC'
     },
     {
@@ -88,5 +88,5 @@ export const MOCK_PROJECTS: PortfolioItem[] = [
         url: 'https://alchememe.com',
         description: 'AI That Makes Apps For The 99% Who Don\'t Know How To Code.',
         status: 'POC'
-    },
+    }
 ];

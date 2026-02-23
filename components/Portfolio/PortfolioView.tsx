@@ -68,7 +68,7 @@ export const PortfolioView: React.FC = () => {
                     onChange={(e) => setSort(e.target.value)}
                     className="bg-black/20 text-slate-200 border-none text-xs font-medium rounded-lg px-3 py-2 focus:ring-1 focus:ring-indigo-500 cursor-pointer hover:bg-black/30 transition-colors"
                  >
-                     <option value="DEFAULT">Recommended</option>
+                     <option value="DEFAULT">Random</option>
                      <option value="PRIORITY">Status Priority</option>
                      <option value="TITLE_ASC">A-Z</option>
                      <option value="TITLE_DESC">Z-A</option>
