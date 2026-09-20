@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Shell } from './components/Layout/Shell';
 import { HomeView } from './components/Home/HomeView';
-import { ChatView } from './components/Chat/ChatView';
 import { VlogView } from './components/Vlog/VlogView';
 import { PortfolioView } from './components/Portfolio/PortfolioView';
 import { PromptsView } from './components/Prompts/PromptsView';
@@ -14,8 +13,6 @@ function App() {
     switch (currentView) {
       case AppView.HOME:
         return <HomeView onLaunchApp={setCurrentView} />;
-      case AppView.CHAT:
-        return <ChatView />;
       case AppView.VLOG:
         return <VlogView />;
       case AppView.PORTFOLIO:

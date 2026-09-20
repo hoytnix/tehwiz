@@ -4,18 +4,18 @@
 
 # TehWiz Productions — Application Portfolio & Command Center
 
-The official portfolio, cognitive persona workspace, and application hub for **TehWiz Productions** (Michael Scott Hoyt). Includes Archie AI assistant, project portfolio matrix with structured licensing and pricing, prompt engineering library, and technical vlogs.
+The official portfolio and application hub for **TehWiz Productions** (Michael Scott Hoyt). Includes a curated project portfolio matrix with structured licensing and pricing, prompt engineering library, and technical vlogs.
 
 ---
 
 ## Featured Portfolio Projects
 
-- **Yuli** (`yuli`): Autonomous Cognitive Persona Engine & Mind-Reading MBTI Diagnostic trained on multi-turn Reddit conversational discourse across 4-Sides-of-the-Mind psychological states. (BSL 1.1)
+- **Yuli** (`yuli`): Autonomous Cognitive Persona Engine & Mind-Reading MBTI Diagnostic trained on multi-turn Reddit chats. Runs on mobile web / desktop. (BSL 1.1)
 - **Purple Canary** (`purple-canary`): Computer Vision Reagent Analysis & Harm-Reduction Scanner. (MIT)
-- **Aevloc** (`aevloc`): Online Reputation Management Firewall & Smart NFC Review Gateway for local businesses. (Proprietary SaaS)
-- **Alembic Quest** (`alembic-quest`): High-Velocity Canvassing Operating System & Spatial Territory Radar with 1-click address skiptracing. (Proprietary SaaS)
-- **Quarkmeme (qm-holla)** (`quarkmeme`): FLOSS Local-First Alternative to Polsia running multi-agent teams directly over SQLite WASM and OPFS. (MIT)
-- **Rarestry** (`rarestry`): Deterministic WASM Computer Vision Pokémon Card Grading & Virtual Vault. (Freestanding Web App)
+- **Aevloc** (`aevloc`): Online Reputation Management Firewall protecting local businesses from damaging reviews. (Commercial SaaS)
+- **Alembic Quest** (`alembic-quest`): High-Velocity Canvassing Operating System & Spatial Territory Radar with 1-click address skiptracing. (SaaS)
+- **Quarkmeme** (`quarkmeme`): Agentic Project OS: FLOSS Alternative to Polsia running multi-agent teams over local SQLite WASM and OPFS. (MIT)
+- **Rarestry** (`rarestry`): Deterministic WASM Computer Vision Pokémon Card Grading. (Freestanding Web App)
 
 ---
 

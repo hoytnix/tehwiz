@@ -21,15 +21,6 @@ export const APP_REGISTRY: AppConfig[] = [
     borderColor: 'border-gray-800'
   },
   { 
-    id: AppView.CHAT, 
-    label: 'ARCHIE', 
-    icon: 'smart_toy', 
-    gradient: 'from-leet-green to-[#008f11]',
-    textColor: 'text-leet-green',
-    glow: 'shadow-[0_0_30px_rgba(0,255,65,0.3)]',
-    borderColor: 'border-leet-green/50'
-  },
-  { 
     id: AppView.VLOG, 
     label: 'VLOGS', 
     icon: 'videocam', 

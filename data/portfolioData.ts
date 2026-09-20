@@ -5,11 +5,13 @@ export const MOCK_PROJECTS: Project[] = [
         id: 'yuli',
         title: 'Yuli',
         tagline: 'Autonomous Cognitive Persona Engine & Mind-Reading MBTI Diagnostic',
-        description: 'Trained on multi-turn conversational discourse from Reddit to intuitively detect, track, and adapt to Myers-Briggs (MBTI) cognitive personality types in real time. Known for delivering eerily accurate, mind-reading conversational dynamics across 4-Sides-of-the-Mind psychological states.',
+        description: 'Yuli was trained on multi-turn chats from Reddit to identify MBTI types and everyone who tries her says it\'s like she reads your mind LOL. The model can run on an iPhone SE 3 or later or modern Android Phone with at least 4GB of RAM.',
         category: 'AI & Cognitive Architecture',
         tags: ['AI', 'MBTI', 'Cognitive Architecture', 'NLP', 'LLM', 'Reddit'],
         status: 'BETA',
+        url: 'https://project-yuli.netlify.app/',
         links: {
+            liveUrl: 'https://project-yuli.netlify.app/',
             githubUrls: [
                 { label: 'Yuli-E2B-Reddit', url: 'https://github.com/hoytnix/Yuli-E2B-Reddit' },
                 { label: 'Yuli-Web', url: 'https://github.com/hoytnix/Yuli-Web' }
@@ -20,28 +22,28 @@ export const MOCK_PROJECTS: Project[] = [
         license: {
             name: 'BSL 1.1 (Business Source License 1.1)',
             url: 'https://github.com/hoytnix/Yuli-Web/blob/main/LICENSE',
-            summary: 'Free for personal, non-commercial, evaluation, and commercial applications generating under $30,000 USD in gross revenue. Upon reaching $30,000 USD in revenue, a commercial production license is required at $1,500/year per title.'
+            summary: 'You can use it for free until you make over $30,000 with it and then it\'s $1,500 a year.'
         },
         pricing: [
             {
                 plan: 'Source Code Only',
                 price: 'FREE',
-                description: 'Up to $30,000 gross revenue; available on GitHub and Hugging Face.',
+                description: 'FREE up to $30,000. (It\'s on Github & HuggingFace lol).',
                 badge: 'Open Source'
             },
             {
                 plan: 'Commercial License',
                 price: '$1,500',
                 period: '/ year',
-                description: 'For entities generating >$30,000 gross revenue.',
+                description: 'Required once you make over $30,000 with it.',
                 highlighted: true,
                 badge: 'Production'
             },
             {
                 plan: 'Enterprise SLA Support',
                 price: 'By Request Only',
-                description: 'Custom Quotes for dedicated engineering integration, model fine-tuning, and support.',
-                badge: 'Custom'
+                description: 'Enterprise SLA Support is By Request Only (Custom Quotes).',
+                badge: 'Custom Quotes'
             }
         ]
     },
@@ -60,27 +62,27 @@ export const MOCK_PROJECTS: Project[] = [
         },
         license: {
             name: 'MIT License',
-            summary: '100% Free and Open-Source Software.'
+            summary: '100% Free and Open-Source Software (MIT License).'
         },
         pricing: [
             {
                 plan: 'Source Code Only',
                 price: 'FREE',
-                description: 'Self-host or modify via MIT License.',
+                description: 'Source Code Only For FREE.',
                 badge: 'MIT'
             },
             {
-                plan: 'Ad-Supported Mobile Web',
+                plan: 'FREE With Ads',
                 price: 'FREE',
                 description: 'Complete testing access with non-intrusive sponsor ads.',
                 highlighted: true,
-                badge: 'Popular'
+                badge: 'With Ads'
             },
             {
-                plan: 'Ad-Free Lifetime Pass',
-                price: '$1.00',
-                period: 'one-time',
-                description: 'One-time payment, zero ads forever.',
+                plan: 'No Ads Forever',
+                price: '$1',
+                period: 'Forever',
+                description: '$1 For No Ads Forever.',
                 badge: 'Lifetime'
             }
         ]
@@ -88,10 +90,10 @@ export const MOCK_PROJECTS: Project[] = [
     {
         id: 'aevloc',
         title: 'Aevloc',
-        tagline: 'Online Reputation Management Firewall & Smart NFC Review Gateway',
-        description: 'An intelligent reputation firewall that protects local businesses from damaging public reviews. Bifurcates customer sentiment at the doorstep or countertop using programmable NFC tap cards and QR funnels, routing 4-to-5-star ratings to public profiles while intercepting negative feedback privately.',
+        tagline: 'Online Reputation Management Firewall',
+        description: 'Aevloc is now an Online Reputation Management Firewall. Protects local businesses from damaging public reviews by bifurcating customer sentiment, routing 4-to-5-star ratings to public profiles while intercepting negative feedback privately.',
         category: 'MarTech & Reputation Management',
-        tags: ['SaaS', 'NFC Hardware', 'Review Gateway', 'Local SEO', 'Reputation Firewall'],
+        tags: ['SaaS', 'Reputation Firewall', 'Local SEO', 'Review Gateway'],
         status: 'LIVE',
         url: 'https://aevloc.com',
         links: {
@@ -103,24 +105,24 @@ export const MOCK_PROJECTS: Project[] = [
         },
         pricing: [
             {
-                plan: 'SMB Starter',
-                price: '$15 / mo',
-                period: 'or $97/yr',
-                description: 'Single location, reputation firewall, review routing.'
+                plan: 'SMBs',
+                price: '$15 / month',
+                period: 'or $97 / year',
+                description: '$15 per month / $97 a year for SMBs.'
             },
             {
-                plan: 'Agency Unlimited',
-                price: '$97 / mo',
-                period: 'or $970/yr',
-                description: 'Unlimited client business sub-accounts, white-label branding, multi-tenant dashboard.',
+                plan: 'Agencies',
+                price: '$97 / month',
+                period: 'or $970 / year',
+                description: '$97 per month / $970 a year for Agencies.',
                 highlighted: true,
                 badge: 'Recommended'
             },
             {
-                plan: 'Done-For-You Integration',
+                plan: 'Done-For-You API Integration',
                 price: '$1,500',
                 period: 'one-time',
-                description: 'Full custom API integration, bespoke funnel styling, custom domain routing, and hardware onboarding.',
+                description: '$1,500 Done-For-You API Integration.',
                 badge: 'Turnkey'
             }
         ]
@@ -128,8 +130,8 @@ export const MOCK_PROJECTS: Project[] = [
     {
         id: 'alembic-quest',
         title: 'Alembic Quest',
-        tagline: 'High-Velocity Canvassing Operating System & Spatial Territory Radar',
-        description: 'A Specialized Field CRM For Door-To-Door Businesses To Track Neighborhood Canvassing, Door Knocks, And Customer Conversion. Features high-velocity spatial territory radar with 1-click address skiptracing and property data scrub capabilities provided free for individual canvassers.',
+        tagline: 'High-Velocity Canvassing OS & Spatial Territory Radar',
+        description: 'A Specialized Field CRM For Door-To-Door Businesses To Track Neighborhood Canvassing, Door Knocks, And Customer Conversion. Alembic Quest is more feature filled than ever. Now you can scrub / skiptrace any address with one click for FREE.',
         category: 'Field Operations & Spatial CRM',
         tags: ['CRM', 'Canvassing', 'GIS Radar', 'Skiptracing', 'Offline-First'],
         status: 'MVP',
@@ -143,58 +145,58 @@ export const MOCK_PROJECTS: Project[] = [
         },
         pricing: [
             {
-                plan: 'Sole Proprietor',
+                plan: 'Sole-Proprietors',
                 price: 'FREE',
-                description: 'Full canvassing radar, 1-click address scrubbing, offline queue, unlimited individual knocks.',
+                description: 'FREE for Sole-Proprietors. Now you can scrub / skiptrace any address with one click for FREE.',
                 highlighted: true,
                 badge: 'Solo Free'
             },
             {
-                plan: 'Team Growth',
+                plan: 'Additional Seats',
                 price: '$7',
-                period: '/ mo per seat',
-                description: 'Multi-user territory sync, manager telemetry dashboard, team leaderboards.',
+                period: '/ Month Per Additional Seat',
+                description: '$7 Per Month Per Additional Seat.',
                 badge: 'Teams'
             },
             {
-                plan: 'Residential Skiptraces',
-                price: '$0.01',
-                period: '/ lookup',
-                description: '1¢ per residential contact and property intelligence lookup.',
-                badge: 'Pay-As-You-Go'
+                plan: 'Residential Skiptrace',
+                price: '1¢',
+                period: 'per Residential Skiptrace',
+                description: '1 cent per Residential Skiptrace.',
+                badge: 'Skiptrace'
             }
         ]
     },
     {
         id: 'quarkmeme',
-        title: 'Quarkmeme (qm-holla)',
-        tagline: 'Agentic Project OS: FLOSS Local-First Alternative to Polsia',
-        description: 'A 100% Free, Libre, and Open-Source Software (FLOSS) alternative to Polsia. Runs multi-agent autonomous teams (7-universe crew casting) directly in the browser over local SQLite WASM and OPFS, with zero cloud database bills and zero vendor lock-in.',
+        title: 'Quarkmeme',
+        tagline: 'Agentic Project OS: FLOSS Alternative To Polsia',
+        description: 'Now an Agentic Project OS: FLOSS Alternative To Polsia. Runs multi-agent autonomous teams directly in the browser over local SQLite WASM and OPFS, with zero cloud database bills and zero vendor lock-in.',
         category: 'Autonomous Multi-Agent Systems',
         tags: ['FLOSS', 'Local-First', 'WASM SQLite', 'OPFS', 'Multi-Agent', 'Zero-Cloud'],
         status: 'POC',
         url: 'https://quarkmeme.com',
         links: {
             liveUrl: 'https://quarkmeme.com',
-            githubUrl: 'https://github.com/hoytnix/qm-holla'
+            githubUrl: 'https://raw.githubusercontent.com/hoytnix/qm-holla'
         },
         license: {
             name: 'MIT License',
-            summary: 'Free/Libre and Open-Source Software.'
+            summary: '100% Free/Libre and Open-Source Software (MIT License).'
         },
         pricing: [
             {
-                plan: 'Local-First Core',
+                plan: 'Source Code Only',
                 price: 'FREE',
-                description: 'Complete source code, 100% client-side execution, local OPFS database, zero recurring bills.',
+                description: 'FREE Source Code Only.',
                 highlighted: true,
                 badge: 'FLOSS'
             },
             {
-                plan: 'Encrypted Cloud Sync',
+                plan: 'Cloud Sync',
                 price: 'COMING SOON',
-                period: '@ TBD',
-                description: 'Multi-device encrypted backup and remote peer synchronization.',
+                period: '@ TBD PRICE',
+                description: 'Cloud Sync is COMING SOON @ TBD PRICE.',
                 badge: 'Roadmap'
             }
         ]
@@ -202,8 +204,8 @@ export const MOCK_PROJECTS: Project[] = [
     {
         id: 'rarestry',
         title: 'Rarestry',
-        tagline: 'Deterministic WASM Computer Vision Pokémon Card Grading & Vault',
-        description: 'High-speed trading card grading and collection tracking powered by in-browser WebAssembly computer vision. Instantly categorizes, grades, and values vintage and modern trading cards with virtual binder management.',
+        tagline: 'Deterministic WASM Computer Vision Pokemon Card Grading',
+        description: 'Slab Guru is now Rarestry. Deterministic WASM Computer Vision Pokemon Card Grading. High-speed trading card grading and collection tracking powered by in-browser WebAssembly computer vision.',
         category: 'WASM Computer Vision & Collectibles',
         tags: ['WASM', 'Computer Vision', 'Card Grading', 'Pokémon', 'Digital Vault'],
         status: 'LIVE',
@@ -217,17 +219,17 @@ export const MOCK_PROJECTS: Project[] = [
         },
         pricing: [
             {
-                plan: 'Personal Binder & Grading',
+                plan: 'Personal Use',
                 price: 'FREE',
-                description: 'Full digital portfolio tracker, set completion analytics, card scanner.',
+                description: 'FREE For Personal Use.',
                 highlighted: true,
                 badge: 'Free Tier'
             },
             {
-                plan: 'High-Speed Hardware Stand',
+                plan: 'Hardware Scanner',
                 price: 'COMING SOON',
                 period: '@ $15 each',
-                description: 'Ergonomic, angled capture stand enabling 1-card-per-second auto-shutter inventory scanning.',
+                description: 'Hardware Scanner is COMING SOON @ $15 each.',
                 badge: 'Hardware'
             }
         ]

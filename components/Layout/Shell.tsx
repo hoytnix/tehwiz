@@ -42,6 +42,24 @@ export const Shell: React.FC<ShellProps> = ({ children, currentView, onChangeVie
                 </h1>
              </div>
            </button>
+
+           {/* Desktop Navigation */}
+           <nav className="hidden md:flex items-center gap-1.5 ml-4">
+             {APP_REGISTRY.map((item) => (
+               <button
+                 key={item.id}
+                 onClick={() => onChangeView(item.id)}
+                 className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all ${
+                   currentView === item.id
+                     ? 'bg-white/15 text-white border border-white/10 shadow-sm'
+                     : 'text-slate-400 hover:bg-white/5 hover:text-white'
+                 }`}
+               >
+                 <span className="material-icons text-sm opacity-70">{item.icon}</span>
+                 <span>{item.label}</span>
+               </button>
+             ))}
+           </nav>
         </div>
 
         {/* Status Indicators */}
