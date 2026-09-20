@@ -27,13 +27,44 @@ export interface VlogEntry {
   description: string;
 }
 
-export interface PortfolioItem {
+export interface PricingTier {
+  plan: string;
+  price: string;
+  period?: string;
+  description: string;
+  badge?: string;
+  highlighted?: boolean;
+}
+
+export interface ProjectLicense {
+  name: string;
+  url?: string;
+  summary: string;
+}
+
+export interface ProjectLinks {
+  liveUrl?: string;
+  githubUrl?: string;
+  githubUrls?: { label: string; url: string }[];
+  huggingFaceUrl?: string;
+  licenseUrl?: string;
+}
+
+export interface Project {
   id: string;
   title: string;
+  tagline: string;
   description: string;
+  category: string;
+  tags: string[];
+  links: ProjectLinks;
+  license: ProjectLicense;
+  pricing: PricingTier[];
   status: 'LIVE' | 'ARCHIVED' | 'CLASSIFIED' | 'ALPHA' | 'BETA' | 'PRE-ALPHA' | 'POC' | 'MVP';
   url?: string;
 }
+
+export type PortfolioItem = Project;
 
 export interface ThreatItem {
   title: string;
