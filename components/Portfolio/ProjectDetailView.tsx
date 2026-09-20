@@ -134,7 +134,7 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({
       </div>
 
       {/* Hero Header Card */}
-      <div className="relative overflow-hidden rounded-2xl p-6 sm:p-8 mb-8 border border-white/10 bg-gradient-to-br from-indigo-950/40 via-slate-900/60 to-black/80 backdrop-blur-xl shadow-2xl">
+      <div className="relative overflow-hidden rounded-2xl p-6 sm:p-8 mb-6 border border-white/10 bg-gradient-to-br from-indigo-950/40 via-slate-900/60 to-black/80 backdrop-blur-xl shadow-2xl">
         {/* Glow orb */}
         <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 rounded-full bg-indigo-500/10 blur-3xl pointer-events-none" />
 
@@ -237,15 +237,88 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({
         </div>
       </div>
 
+      {/* Copy Hooks Banner: The Hook & The Agitation */}
+      {(project.hook || project.agitation) && (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+          {project.hook && (
+            <div className="p-5 rounded-2xl bg-gradient-to-r from-indigo-950/60 to-slate-900/60 border border-indigo-500/30 flex items-start gap-3.5 shadow-lg">
+              <span className="material-icons text-indigo-400 text-2xl mt-0.5 shrink-0">bolt</span>
+              <div>
+                <span className="text-[11px] font-mono uppercase tracking-wider text-indigo-300 font-bold block mb-1">
+                  The Core Hook
+                </span>
+                <p className="text-white text-base font-semibold leading-snug">
+                  "{project.hook}"
+                </p>
+              </div>
+            </div>
+          )}
+
+          {project.agitation && (
+            <div className="p-5 rounded-2xl bg-gradient-to-r from-rose-950/30 via-slate-900/60 to-black/60 border border-rose-500/20 flex items-start gap-3.5 shadow-lg">
+              <span className="material-icons text-rose-400 text-2xl mt-0.5 shrink-0">psychology_alt</span>
+              <div>
+                <span className="text-[11px] font-mono uppercase tracking-wider text-rose-300 font-bold block mb-1">
+                  The Real-World Friction
+                </span>
+                <p className="text-slate-200 text-sm font-medium leading-snug">
+                  "{project.agitation}"
+                </p>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
       {/* Main Content Grid: 2 Columns */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Left 2 Columns: Overview, Highlights, Specs, License */}
+        {/* Left 2 Columns: Enemy, Mechanism, Transformation, Highlights, Specs, License */}
         <div className="lg:col-span-2 flex flex-col gap-6">
+
+          {/* Section: The Enemy & Friction Point */}
+          {project.enemyFriction && (
+            <CyberCard className="!p-6 sm:!p-8 border-rose-500/20 bg-gradient-to-br from-rose-950/15 via-slate-950/60 to-black/60">
+              <div className="flex items-center gap-2 text-rose-300 font-bold text-lg mb-3">
+                <span className="material-icons text-rose-400">report_problem</span>
+                <h2>The Enemy & The Status-Quo Friction</h2>
+              </div>
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                {project.enemyFriction}
+              </p>
+            </CyberCard>
+          )}
+
+          {/* Section: The Unique Mechanism */}
+          {project.uniqueMechanism && (
+            <CyberCard className="!p-6 sm:!p-8 border-indigo-500/30 bg-gradient-to-br from-indigo-950/25 via-slate-950/60 to-black/60">
+              <div className="flex items-center gap-2 text-indigo-300 font-bold text-lg mb-3">
+                <span className="material-icons text-indigo-400">auto_awesome</span>
+                <h2>The Unique Mechanism</h2>
+              </div>
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                {project.uniqueMechanism}
+              </p>
+            </CyberCard>
+          )}
+
+          {/* Section: The Transformation */}
+          {project.transformation && (
+            <CyberCard className="!p-6 sm:!p-8 border-emerald-500/20 bg-gradient-to-br from-emerald-950/15 via-slate-950/60 to-black/60">
+              <div className="flex items-center gap-2 text-emerald-300 font-bold text-lg mb-3">
+                <span className="material-icons text-emerald-400">trending_up</span>
+                <h2>The Transformation & Real-World ROI</h2>
+              </div>
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                {project.transformation}
+              </p>
+            </CyberCard>
+          )}
+
           {/* Detailed Narrative & About */}
           <CyberCard className="!p-6 sm:!p-8">
             <div className="flex items-center gap-2 text-white font-bold text-lg mb-4">
               <span className="material-icons text-indigo-400">info</span>
-              <h2>Project Overview & Capabilities</h2>
+              <h2>Project Overview & Architecture</h2>
             </div>
 
             <p className="text-slate-300 text-base leading-relaxed whitespace-pre-line mb-6">
@@ -256,13 +329,13 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({
             {project.highlights && project.highlights.length > 0 && (
               <div className="mt-6 pt-6 border-t border-white/10">
                 <h3 className="text-sm font-bold uppercase tracking-wider text-slate-400 mb-3 font-mono">
-                  Key Highlights & Architecture
+                  Key Capabilities & Highlights
                 </h3>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {project.highlights.map((highlight, idx) => (
                     <li
                       key={idx}
-                      className="p-3 rounded-xl bg-white/[0.02] border border-white/5 flex items-start gap-2.5"
+                      className="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 flex items-start gap-2.5"
                     >
                       <span className="material-icons text-sm text-emerald-400 mt-0.5 shrink-0">check_circle</span>
                       <span className="text-xs text-slate-300 leading-normal">{highlight}</span>
@@ -301,7 +374,7 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({
             <CyberCard className="!p-6">
               <div className="flex items-center gap-2 text-white font-bold text-lg mb-3">
                 <span className="material-icons text-indigo-400">account_tree</span>
-                <h2>Architecture Deep Dive</h2>
+                <h2>Engineering Rationale</h2>
               </div>
               <p className="text-slate-300 text-sm leading-relaxed">
                 {project.architectureNotes}
@@ -353,7 +426,7 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({
             <CyberCard className="!p-6">
               <div className="flex items-center gap-2 text-white font-bold text-lg mb-1">
                 <span className="material-icons text-indigo-400">payments</span>
-                <h2>Pricing & Tiers</h2>
+                <h2>The Offer & Pricing</h2>
               </div>
               <p className="text-xs text-slate-400 mb-5">
                 Transparent access, licensing, and enterprise tiers.

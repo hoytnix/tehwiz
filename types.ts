@@ -67,6 +67,11 @@ export interface Project {
   pricing: PricingTier[];
   status: 'LIVE' | 'ARCHIVED' | 'CLASSIFIED' | 'ALPHA' | 'BETA' | 'PRE-ALPHA' | 'POC' | 'MVP';
   url?: string;
+  hook?: string;
+  agitation?: string;
+  enemyFriction?: string;
+  uniqueMechanism?: string;
+  transformation?: string;
   highlights?: string[];
   specs?: ProjectSpec[];
   architectureNotes?: string;

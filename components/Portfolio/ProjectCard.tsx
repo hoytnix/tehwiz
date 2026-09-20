@@ -63,9 +63,17 @@ export const ProjectCard: React.FC<{
 
         {/* Tagline */}
         {project.tagline && (
-          <p className="text-xs font-medium text-slate-300/90 italic mb-3">
+          <p className="text-xs font-medium text-slate-300/90 italic mb-2.5">
             {project.tagline}
           </p>
+        )}
+
+        {/* Hook */}
+        {project.hook && (
+          <div className="mb-3 p-2.5 rounded-xl bg-indigo-950/30 border border-indigo-500/20 text-indigo-200 text-xs font-medium flex items-center gap-2">
+            <span className="material-icons text-indigo-400 text-sm shrink-0">bolt</span>
+            <span className="line-clamp-2 italic">"{project.hook}"</span>
+          </div>
         )}
 
         {/* Description */}
