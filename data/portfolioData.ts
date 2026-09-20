@@ -45,7 +45,21 @@ export const MOCK_PROJECTS: Project[] = [
                 description: 'Enterprise SLA Support is By Request Only (Custom Quotes).',
                 badge: 'Custom Quotes'
             }
-        ]
+        ],
+        highlights: [
+            'Trained on multi-turn conversational discourse from Reddit to detect Myers-Briggs (MBTI) cognitive personality types in real time.',
+            'Mind-reading conversational dynamics across 4-Sides-of-the-Mind psychological states.',
+            'Lightweight edge inference: Runs locally on iPhone SE 3+ or Android with ≥4GB RAM.',
+            'Dual open-source codebase for fine-tuning scripts and web user interface.'
+        ],
+        specs: [
+            { label: 'Hardware Minimum', value: 'iPhone SE 3+ / Android ≥4GB RAM' },
+            { label: 'Training Corpus', value: 'Multi-turn conversational Reddit chats' },
+            { label: 'License Model', value: 'BSL 1.1 (Free under $30,000 revenue)' },
+            { label: 'Model Artifacts', value: 'Hugging Face (economyofdreams)' },
+            { label: 'Live Deployment', value: 'project-yuli.netlify.app' }
+        ],
+        architectureNotes: 'Engineered for seamless edge and browser execution. The architecture pairs multi-turn contextual tracking with fast token classification to identify cognitive functions and MBTI types dynamically.'
     },
     {
         id: 'purple-canary',
@@ -85,6 +99,18 @@ export const MOCK_PROJECTS: Project[] = [
                 description: '$1 For No Ads Forever.',
                 badge: 'Lifetime'
             }
+        ],
+        highlights: [
+            'Digital densiometer detecting over 200+ toxins and adulterants in illicit substances.',
+            'Computer vision colorimetric reagent testing accessible directly from any mobile browser.',
+            'Affordable harm reduction: Free ad-supported scanner or $1 lifetime ad-free pass.',
+            'Open-source MIT licensed codebase available on GitHub.'
+        ],
+        specs: [
+            { label: 'Testing Method', value: 'Computer Vision Colorimetric Reagent Analysis' },
+            { label: 'Toxin Database', value: '200+ Chemical Profiles & Adulterants' },
+            { label: 'License', value: 'MIT License (100% Free & Open Source)' },
+            { label: 'Platform', value: 'Mobile Web / Responsive WebApp' }
         ]
     },
     {
@@ -125,6 +151,17 @@ export const MOCK_PROJECTS: Project[] = [
                 description: '$1,500 Done-For-You API Integration.',
                 badge: 'Turnkey'
             }
+        ],
+        highlights: [
+            'Reputation firewall intercepting negative ratings before they reach Google or Yelp.',
+            'Countertop and doorstep NFC smart cards and QR landing funnels.',
+            'Automatic bifurcation: 4-5 stars sent to public review platforms, 1-3 stars routed to private owner feedback form.',
+            'Agency multi-tenant mode with sub-accounts and turnkey custom API integrations.'
+        ],
+        specs: [
+            { label: 'Architecture', value: 'Cloud Reputation Gateway + NFC Hardware' },
+            { label: 'Target Audience', value: 'Local Service Businesses & Marketing Agencies' },
+            { label: 'Integrations', value: 'Google Business Profile, Yelp, Custom APIs' }
         ]
     },
     {
@@ -165,6 +202,17 @@ export const MOCK_PROJECTS: Project[] = [
                 description: '1 cent per Residential Skiptrace.',
                 badge: 'Skiptrace'
             }
+        ],
+        highlights: [
+            'High-velocity spatial territory radar for door-to-door and field sales teams.',
+            '1-click address scrubbing & property skiptracing built right in.',
+            '100% Free for Sole-Proprietors with unlimited individual door knocks.',
+            'Scalable $7/month seat model for teams with 1¢ residential skiptraces.'
+        ],
+        specs: [
+            { label: 'Application Type', value: 'Spatial Territory CRM & Field Canvassing Radar' },
+            { label: 'Offline Sync', value: 'Local queue with automatic background sync' },
+            { label: 'Data Lookups', value: 'Instant property records & contact skiptracing' }
         ]
     },
     {
@@ -199,6 +247,18 @@ export const MOCK_PROJECTS: Project[] = [
                 description: 'Cloud Sync is COMING SOON @ TBD PRICE.',
                 badge: 'Roadmap'
             }
+        ],
+        highlights: [
+            'Agentic Project OS: 100% FLOSS local-first alternative to Polsia.',
+            'Runs multi-agent autonomous teams (7-universe crew casting) inside the browser.',
+            'Zero cloud database recurring bills with SQLite WASM and Origin Private File System (OPFS).',
+            'Full source code available freely under MIT license.'
+        ],
+        specs: [
+            { label: 'License', value: 'MIT License (100% FLOSS)' },
+            { label: 'Database Engine', value: 'In-Browser SQLite WASM + OPFS' },
+            { label: 'Multi-Agent Architecture', value: '7-Universe Autonomous Crew Casting' },
+            { label: 'Cloud Sync', value: 'Coming Soon @ TBD' }
         ]
     },
     {
@@ -232,6 +292,17 @@ export const MOCK_PROJECTS: Project[] = [
                 description: 'Hardware Scanner is COMING SOON @ $15 each.',
                 badge: 'Hardware'
             }
+        ],
+        highlights: [
+            'Deterministic WebAssembly computer vision algorithm for objective card centering and grading.',
+            'Instant card valuation and portfolio binder management.',
+            '100% Free for personal collection tracking on rarestry.com.',
+            'Physical angled auto-shutter capture stand coming soon for $15.'
+        ],
+        specs: [
+            { label: 'Grading Engine', value: 'Deterministic WASM Edge Computer Vision' },
+            { label: 'Supported Cards', value: 'Vintage & Modern Pokémon Trading Cards' },
+            { label: 'Hardware Stand', value: '$15 Ergonomic Rapid Scanner (Coming Soon)' }
         ]
     },
     {

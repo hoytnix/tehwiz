@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PortfolioItem } from '../../types';
 import { usePortfolioFilter } from '../../hooks/usePortfolioFilter';
 import { MOCK_PROJECTS } from '../../data/portfolioData';
 import { ProjectCard } from './ProjectCard';
+import { ProjectDetailView } from './ProjectDetailView';
 
 const shuffleArray = <T,>(array: T[]): T[] => {
   const shuffled = [...array];
@@ -15,6 +16,40 @@ const shuffleArray = <T,>(array: T[]): T[] => {
 
 export const PortfolioView: React.FC = () => {
   const [projects] = useState<PortfolioItem[]>(() => shuffleArray(MOCK_PROJECTS));
+  const [selectedProjectId, setSelectedProjectId] = useState<string | null>(() => {
+    const hash = window.location.hash;
+    if (hash.startsWith('#project/')) {
+      return hash.replace('#project/', '');
+    }
+    return null;
+  });
+
+  // Sync hash changes with state
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash.startsWith('#project/')) {
+        setSelectedProjectId(hash.replace('#project/', ''));
+      } else {
+        setSelectedProjectId(null);
+      }
+    };
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  // Update hash when selectedProjectId changes
+  useEffect(() => {
+    if (selectedProjectId) {
+      if (window.location.hash !== `#project/${selectedProjectId}`) {
+        window.location.hash = `#project/${selectedProjectId}`;
+      }
+    } else {
+      if (window.location.hash.startsWith('#project/')) {
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+      }
+    }
+  }, [selectedProjectId]);
 
   // Logic Separation: Filtering Hook
   const {
@@ -25,6 +60,21 @@ export const PortfolioView: React.FC = () => {
       availableStatuses,
       filteredAndSortedProjects
   } = usePortfolioFilter(projects);
+
+  const selectedProject = selectedProjectId
+    ? projects.find((p) => p.id === selectedProjectId) || MOCK_PROJECTS.find((p) => p.id === selectedProjectId) || null
+    : null;
+
+  if (selectedProject) {
+    return (
+      <ProjectDetailView
+        project={selectedProject}
+        onBack={() => setSelectedProjectId(null)}
+        onSelectProject={(id) => setSelectedProjectId(id)}
+        allProjects={projects}
+      />
+    );
+  }
 
   return (
     <div className="absolute inset-0 flex flex-col p-6 overflow-y-auto pb-32 bg-transparent">
@@ -78,7 +128,11 @@ export const PortfolioView: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredAndSortedProjects.map((project) => (
-                <ProjectCard key={project.id} project={project} />
+                <ProjectCard 
+                  key={project.id} 
+                  project={project} 
+                  onSelect={(p) => setSelectedProjectId(p.id)}
+                />
             ))}
             {filteredAndSortedProjects.length === 0 && (
                 <div className="col-span-full py-20 text-center rounded-2xl bg-white/5 text-slate-400 flex flex-col items-center justify-center">

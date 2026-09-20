@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import { Project } from '../../types';
 import { CyberCard } from '../DesignSystem/CyberCard';
 
-export const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
+export const ProjectCard: React.FC<{ 
+  project: Project; 
+  onSelect?: (project: Project) => void; 
+}> = ({ project, onSelect }) => {
   const [showFullLicense, setShowFullLicense] = useState(false);
 
   const getStatusColor = (status: string) => {
@@ -35,9 +38,17 @@ export const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
       <div className="p-6 flex-1 flex flex-col">
         {/* Header: Title, Category & Status */}
         <div className="flex justify-between items-start gap-2 mb-2">
-          <div className="min-w-0">
-            <h3 className="text-xl font-bold text-white group-hover:text-indigo-300 transition-colors tracking-tight">
-              {project.title}
+          <div 
+            className={`min-w-0 ${onSelect ? 'cursor-pointer' : ''}`}
+            onClick={() => onSelect?.(project)}
+          >
+            <h3 className="text-xl font-bold text-white group-hover:text-indigo-300 transition-colors tracking-tight flex items-center gap-1.5">
+              <span>{project.title}</span>
+              {onSelect && (
+                <span className="material-icons text-sm text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                  open_in_new
+                </span>
+              )}
             </h3>
             {project.category && (
               <span className="text-[11px] font-mono uppercase tracking-wider text-indigo-400 font-semibold">
@@ -178,61 +189,78 @@ export const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
         )}
       </div>
 
-      {/* Footer Links (Dual Repos, Hugging Face, Live Site) */}
-      <div className="p-4 mt-auto border-t border-white/5 bg-black/40 flex flex-wrap gap-2 items-center">
-        {/* Live URL */}
-        {liveUrl && (
-          <a
-            href={liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 min-w-[120px] inline-flex items-center justify-center gap-1.5 text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-500 px-3.5 py-2 rounded-lg transition-all shadow-md shadow-indigo-600/20"
+      {/* Footer Links (Explore Details + External Links) */}
+      <div className="p-4 mt-auto border-t border-white/5 bg-black/40 flex flex-col gap-2.5">
+        {onSelect && (
+          <button
+            type="button"
+            onClick={() => onSelect(project)}
+            className="w-full py-2 px-3.5 rounded-xl text-xs font-bold text-indigo-300 bg-indigo-500/10 hover:bg-indigo-600 hover:text-white border border-indigo-500/30 hover:border-indigo-500 transition-all flex items-center justify-center gap-1.5 group/btn shadow-sm"
           >
-            <span>{project.id === 'yuli' ? 'Try Yuli Web App' : 'Visit Project'}</span>
-            <span className="material-icons text-xs">arrow_outward</span>
-          </a>
+            <span>Explore Project Page</span>
+            <span className="material-icons text-xs group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+          </button>
         )}
 
-        {/* Hugging Face Link */}
-        {huggingFace && (
-          <a
-            href={huggingFace}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-1.5 text-xs font-medium text-amber-200 bg-amber-500/10 border border-amber-500/30 hover:bg-amber-500/20 px-3 py-2 rounded-lg transition-all"
-          >
-            <span>🤗 Hugging Face</span>
-            <span className="material-icons text-xs">open_in_new</span>
-          </a>
-        )}
+        <div className="flex flex-wrap gap-2 items-center">
+          {/* Live URL */}
+          {liveUrl && (
+            <a
+              href={liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="flex-1 min-w-[120px] inline-flex items-center justify-center gap-1.5 text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-500 px-3.5 py-2 rounded-lg transition-all shadow-md shadow-indigo-600/20"
+            >
+              <span>{project.id === 'yuli' ? 'Try Yuli Web App' : 'Visit Project'}</span>
+              <span className="material-icons text-xs">arrow_outward</span>
+            </a>
+          )}
 
-        {/* Single GitHub Repo */}
-        {singleGithub && (
-          <a
-            href={singleGithub}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-1 text-xs font-medium text-slate-300 bg-white/5 border border-white/10 hover:bg-white/10 hover:text-white px-3 py-2 rounded-lg transition-all"
-          >
-            <span className="material-icons text-xs">code</span>
-            <span>GitHub</span>
-          </a>
-        )}
+          {/* Hugging Face Link */}
+          {huggingFace && (
+            <a
+              href={huggingFace}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="inline-flex items-center justify-center gap-1.5 text-xs font-medium text-amber-200 bg-amber-500/10 border border-amber-500/30 hover:bg-amber-500/20 px-3 py-2 rounded-lg transition-all"
+            >
+              <span>🤗 Hugging Face</span>
+              <span className="material-icons text-xs">open_in_new</span>
+            </a>
+          )}
 
-        {/* Multiple GitHub Repos */}
-        {hasMultipleRepos && project.links.githubUrls?.map((repo) => (
-          <a
-            key={repo.label}
-            href={repo.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-1 text-xs font-medium text-slate-300 bg-white/5 border border-white/10 hover:bg-indigo-600/20 hover:border-indigo-500/30 hover:text-indigo-200 px-2.5 py-2 rounded-lg transition-all"
-            title={repo.label}
-          >
-            <span className="material-icons text-xs">code</span>
-            <span>{repo.label}</span>
-          </a>
-        ))}
+          {/* Single GitHub Repo */}
+          {singleGithub && (
+            <a
+              href={singleGithub}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="inline-flex items-center justify-center gap-1 text-xs font-medium text-slate-300 bg-white/5 border border-white/10 hover:bg-white/10 hover:text-white px-3 py-2 rounded-lg transition-all"
+            >
+              <span className="material-icons text-xs">code</span>
+              <span>GitHub</span>
+            </a>
+          )}
+
+          {/* Multiple GitHub Repos */}
+          {hasMultipleRepos && project.links.githubUrls?.map((repo) => (
+            <a
+              key={repo.label}
+              href={repo.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="inline-flex items-center justify-center gap-1 text-xs font-medium text-slate-300 bg-white/5 border border-white/10 hover:bg-indigo-600/20 hover:border-indigo-500/30 hover:text-indigo-200 px-2.5 py-2 rounded-lg transition-all"
+              title={repo.label}
+            >
+              <span className="material-icons text-xs">code</span>
+              <span>{repo.label}</span>
+            </a>
+          ))}
+        </div>
       </div>
     </CyberCard>
   );

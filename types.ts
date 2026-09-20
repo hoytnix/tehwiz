@@ -50,6 +50,11 @@ export interface ProjectLinks {
   licenseUrl?: string;
 }
 
+export interface ProjectSpec {
+  label: string;
+  value: string;
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -62,6 +67,9 @@ export interface Project {
   pricing: PricingTier[];
   status: 'LIVE' | 'ARCHIVED' | 'CLASSIFIED' | 'ALPHA' | 'BETA' | 'PRE-ALPHA' | 'POC' | 'MVP';
   url?: string;
+  highlights?: string[];
+  specs?: ProjectSpec[];
+  architectureNotes?: string;
 }
 
 export type PortfolioItem = Project;
