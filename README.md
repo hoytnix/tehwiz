@@ -21,7 +21,7 @@ The official portfolio and application hub for **TehWiz Productions** (Michael S
 
 ## Tech Stack
 
-- **Runtime & UI**: React 19, TypeScript, Vite, Tailwind CSS, Material Icons
+- **Framework & Runtime**: Next.js 15 (App Router), React 19, TypeScript, Tailwind CSS, Material Icons
 - **AI & Integrations**: Google GenAI SDK (`@google/genai`), React Markdown, Recharts
 - **Package Management**: `pnpm`
 
