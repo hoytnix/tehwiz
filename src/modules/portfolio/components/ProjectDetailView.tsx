@@ -6,6 +6,8 @@ import { useRouter } from 'next/navigation';
 import { Project } from '@/types';
 import { CyberButton } from '@/components/ui/CyberButton';
 import { CyberCard } from '@/components/ui/CyberCard';
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
+import { PermalinkButton } from '@/components/ui/PermalinkButton';
 
 export interface ProjectDetailViewProps {
   project: Project;
@@ -113,32 +115,24 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({
             Back to Systems
           </CyberButton>
 
-          {/* Breadcrumb */}
-          <div className="hidden sm:flex items-center gap-2 text-xs font-mono text-slate-400">
-            <span>/</span>
-            <Link href="/portfolio" className="hover:text-white cursor-pointer transition-colors">
-              Systems
-            </Link>
-            <span>/</span>
-            <span className="text-indigo-300 font-bold">{project.title}</span>
-          </div>
+          {/* Breadcrumbs */}
+          <Breadcrumbs 
+            items={[
+              { label: 'Systems', href: '/portfolio', icon: 'layers' },
+              { label: project.title }
+            ]} 
+            className="hidden sm:flex"
+          />
         </div>
 
         {/* Action Controls & Pagination */}
         <div className="flex items-center gap-2">
-          {/* Copy Link Button */}
-          <button
-            onClick={handleCopyLink}
-            className={`px-3 py-1.5 rounded-xl border text-xs font-medium flex items-center gap-1.5 transition-all cursor-pointer ${
-              copied
-                ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40 shadow-sm'
-                : 'bg-white/[0.04] border-white/10 hover:bg-white/[0.08] text-slate-300 hover:text-white'
-            }`}
-            title="Copy direct deep-link to this project"
-          >
-            <span className="material-icons text-sm">{copied ? 'check' : 'share'}</span>
-            <span>{copied ? 'Link Copied!' : 'Share'}</span>
-          </button>
+          {/* Permalink Button */}
+          <PermalinkButton 
+            path={`/portfolio/${project.id}`} 
+            label="Permalink" 
+            copiedLabel="Permalink Copied!" 
+          />
 
           {/* Prev / Next Flippers */}
           {prevProject && (

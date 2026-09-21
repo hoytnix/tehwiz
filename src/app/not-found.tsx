@@ -4,6 +4,7 @@ import { CyberButton } from '@/components/ui/CyberButton';
 export default function NotFound() {
   return (
     <div className="h-full w-full flex flex-col items-center justify-center p-6 text-center">
+
       <div className="relative mb-6">
         <div className="w-24 h-24 rounded-3xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 shadow-2xl shadow-indigo-500/20">
           <span className="material-icons text-5xl">satellite_alt</span>

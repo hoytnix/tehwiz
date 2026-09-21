@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { PromptItem } from '@/types';
 import { MarkdownRenderer } from '@/components/ui/MarkdownRenderer';
 import { CyberButton } from '@/components/ui/CyberButton';
+import { PermalinkButton } from '@/components/ui/PermalinkButton';
 
 interface PromptDetailModalProps {
   prompt: PromptItem;
@@ -75,13 +76,20 @@ export const PromptDetailModal: React.FC<PromptDetailModalProps> = ({ prompt, on
             </div>
           </div>
 
-          <button 
-            onClick={onClose}
-            className="p-2 rounded-xl text-slate-400 hover:text-white bg-white/[0.04] hover:bg-white/[0.1] border border-white/[0.08] transition-colors shrink-0 cursor-pointer"
-            title="Close modal (Esc)"
-          >
-            <span className="material-icons text-lg">close</span>
-          </button>
+          <div className="flex items-center gap-2 shrink-0">
+            <PermalinkButton 
+              path={`/prompts?id=${prompt.id}`} 
+              label="Permalink" 
+              copiedLabel="Copied!" 
+            />
+            <button 
+              onClick={onClose}
+              className="p-2 rounded-xl text-slate-400 hover:text-white bg-white/[0.04] hover:bg-white/[0.1] border border-white/[0.08] transition-colors cursor-pointer"
+              title="Close modal (Esc)"
+            >
+              <span className="material-icons text-lg">close</span>
+            </button>
+          </div>
         </div>
 
         {/* Modal Content - Rendered Markdown */}

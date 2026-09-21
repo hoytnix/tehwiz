@@ -1,13 +1,16 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { PromptDetailModal } from './PromptDetailModal';
 import { usePromptLibrary } from '../hooks/usePromptLibrary';
 import { PromptCard } from './PromptCard';
 import { CyberButton } from '@/components/ui/CyberButton';
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
+import { PermalinkButton } from '@/components/ui/PermalinkButton';
 
 export const PromptsView: React.FC = () => {
   const { 
+    prompts,
     filteredPrompts, 
     search, 
     setSearch, 
@@ -21,9 +24,43 @@ export const PromptsView: React.FC = () => {
     matchingCount
   } = usePromptLibrary();
 
+  // Handle deep-link query parameter ?id=... on mount
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const promptId = params.get('id');
+      if (promptId) {
+        const found = prompts.find(p => p.id === promptId);
+        if (found) {
+          setSelectedPrompt(found);
+        }
+      }
+    }
+  }, [prompts, setSelectedPrompt]);
+
+  const handleSelectPrompt = (prompt: any) => {
+    setSelectedPrompt(prompt);
+    if (typeof window !== 'undefined') {
+      history.pushState(null, '', `/prompts?id=${prompt.id}`);
+    }
+  };
+
+  const handleCloseModal = () => {
+    setSelectedPrompt(null);
+    if (typeof window !== 'undefined') {
+      history.pushState(null, '', '/prompts');
+    }
+  };
+
   return (
     <div className="h-full flex flex-col p-4 sm:p-6 lg:p-8 overflow-y-auto pb-24 bg-transparent text-slate-100">
       
+      {/* Breadcrumbs & Page Permalink Bar */}
+      <div className="flex items-center justify-between gap-3 mb-4 flex-shrink-0">
+        <Breadcrumbs items={[{ label: 'Prompt Engineering Vault', icon: 'terminal' }]} />
+        <PermalinkButton path="/prompts" label="Share Vault" />
+      </div>
+
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-5 border-b border-white/[0.08] flex-shrink-0">
         <div>
@@ -89,7 +126,7 @@ export const PromptsView: React.FC = () => {
           <PromptCard 
             key={prompt.id} 
             prompt={prompt} 
-            onSelect={(p) => setSelectedPrompt(p)}
+            onSelect={handleSelectPrompt}
           />
         ))}
 
@@ -119,7 +156,7 @@ export const PromptsView: React.FC = () => {
       {selectedPrompt && (
         <PromptDetailModal 
           prompt={selectedPrompt} 
-          onClose={() => setSelectedPrompt(null)}
+          onClose={handleCloseModal}
         />
       )}
 

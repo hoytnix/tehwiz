@@ -9,6 +9,9 @@ import { ProjectCard } from './ProjectCard';
 import { PortfolioFilterBar } from './PortfolioFilterBar';
 import { CyberButton } from '@/components/ui/CyberButton';
 
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
+import { PermalinkButton } from '@/components/ui/PermalinkButton';
+
 interface PortfolioCatalogProps {
   initialProjects?: PortfolioItem[];
 }
@@ -50,6 +53,12 @@ export const PortfolioCatalog: React.FC<PortfolioCatalogProps> = ({
   return (
     <div className="h-full flex flex-col p-4 sm:p-6 lg:p-8 overflow-y-auto pb-24 bg-transparent text-slate-100">
       
+      {/* Breadcrumbs & Page Permalink Bar */}
+      <div className="flex items-center justify-between gap-3 mb-4 flex-shrink-0">
+        <Breadcrumbs items={[{ label: 'Systems Directory', icon: 'layers' }]} />
+        <PermalinkButton path="/portfolio" label="Share Directory" />
+      </div>
+
       {/* View Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-5 border-b border-white/[0.08] flex-shrink-0">
         <div>

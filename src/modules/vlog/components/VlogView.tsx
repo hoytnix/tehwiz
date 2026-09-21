@@ -6,6 +6,8 @@ import { MOCK_ENTRIES } from '../data/vlogData';
 import { FeaturedStream } from './FeaturedStream';
 import { VlogCard } from './VlogCard';
 import { CyberCard } from '@/components/ui/CyberCard';
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
+import { PermalinkButton } from '@/components/ui/PermalinkButton';
 
 export const VlogView: React.FC = () => {
   const [entries] = useState<VlogEntry[]>(MOCK_ENTRIES);
@@ -13,6 +15,12 @@ export const VlogView: React.FC = () => {
   return (
     <div className="h-full flex flex-col p-4 sm:p-6 lg:p-8 overflow-y-auto pb-24 bg-transparent text-slate-100">
       
+      {/* Breadcrumbs & Page Permalink Bar */}
+      <div className="flex items-center justify-between gap-3 mb-4 flex-shrink-0">
+        <Breadcrumbs items={[{ label: 'Engineering Vlogs', icon: 'smart_display' }]} />
+        <PermalinkButton path="/vlog" label="Share Vlogs" />
+      </div>
+
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-5 border-b border-white/[0.08] flex-shrink-0">
         <div>
