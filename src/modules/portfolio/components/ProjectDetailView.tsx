@@ -94,12 +94,15 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({
   const singleGithub = project.links?.githubUrl;
   const hasMultipleRepos = project.links?.githubUrls && project.links.githubUrls.length > 0;
   const huggingFace = project.links?.huggingFaceUrl;
+  const itchIo = project.links?.itchIoUrl;
 
   const liveButtonLabel = project.id === 'yuli' 
     ? 'Try Yuli Web App' 
-    : project.status === 'LIVE' 
-      ? 'Launch Live App' 
-      : 'Launch Web App';
+    : project.id === 'ramen-nights'
+      ? 'Play in Web Browser'
+      : project.status === 'LIVE' 
+        ? 'Launch Live App' 
+        : 'Launch Web App';
 
   return (
     <div className="h-full w-full flex flex-col p-4 sm:p-6 lg:p-8 overflow-y-auto pb-32 bg-transparent text-slate-100">
@@ -204,12 +207,29 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({
 
           {/* Primary Quick Actions */}
           <div className="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0">
-            {liveUrl && (
+            {itchIo && (
+              <a
+                href={itchIo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3.5 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-rose-600 via-rose-500 to-red-500 hover:from-rose-500 hover:to-red-400 transition-all shadow-lg shadow-rose-600/30 flex items-center justify-center gap-2"
+              >
+                <span className="material-icons text-base">sports_esports</span>
+                <span>Play on Itch.io</span>
+                <span className="material-icons text-sm">arrow_outward</span>
+              </a>
+            )}
+
+            {liveUrl && (!itchIo || liveUrl !== itchIo) && (
               <a
                 href={liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3.5 rounded-xl text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-500 transition-all shadow-lg shadow-indigo-600/30 flex items-center justify-center gap-2"
+                className={`px-6 py-3.5 rounded-xl text-sm font-bold transition-all shadow-lg flex items-center justify-center gap-2 ${
+                  itchIo 
+                    ? 'text-slate-200 bg-white/5 border border-white/10 hover:bg-white/10 hover:text-white' 
+                    : 'text-white bg-indigo-600 hover:bg-indigo-500 shadow-indigo-600/30'
+                }`}
               >
                 <span>{liveButtonLabel}</span>
                 <span className="material-icons text-sm">arrow_outward</span>
@@ -524,6 +544,21 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({
             </h3>
 
             <div className="flex flex-col gap-2.5">
+              {itchIo && (
+                <a
+                  href={itchIo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-xl bg-rose-500/10 border border-rose-500/20 hover:bg-rose-500/20 flex items-center justify-between transition-colors group"
+                >
+                  <div className="flex items-center gap-2.5 min-w-0">
+                    <span className="material-icons text-rose-400 text-sm">sports_esports</span>
+                    <span className="text-xs font-semibold text-white truncate">Itch.io Release ($1 Rec'd)</span>
+                  </div>
+                  <span className="material-icons text-xs text-slate-400 group-hover:text-white">open_in_new</span>
+                </a>
+              )}
+
               {liveUrl && (
                 <a
                   href={liveUrl}
@@ -533,7 +568,9 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({
                 >
                   <div className="flex items-center gap-2.5 min-w-0">
                     <span className="material-icons text-indigo-400 text-sm">language</span>
-                    <span className="text-xs font-semibold text-white truncate">Live Application</span>
+                    <span className="text-xs font-semibold text-white truncate">
+                      {project.id === 'ramen-nights' ? 'In-Browser Game' : 'Live Application'}
+                    </span>
                   </div>
                   <span className="material-icons text-xs text-slate-400 group-hover:text-white">open_in_new</span>
                 </a>

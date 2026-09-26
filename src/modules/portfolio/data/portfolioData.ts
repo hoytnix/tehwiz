@@ -469,52 +469,62 @@ export const MOCK_PROJECTS: Project[] = [
     {
         id: 'ramen-nights',
         title: 'Ramen Nights & Budget Bites',
-        tagline: 'Cozy Retro Ramen Management JRPG — Pure 16-Bit Nostalgia',
-        description: 'A completed, zero-dependency 8-bit/16-bit JRPG idle management game built on pure HTML5 Canvas and Web Audio chiptune synthesis. Features a procedural district map, crafting trees, persistent local storage save-states, and narrative cutscenes with zero paywalls or predatory timers.',
+        tagline: 'Tokyo Economics Capstone Tycoon — Culinary Strategy, Supply Chains & 16-Bit Nostalgia',
+        description: 'The lecture halls of Tokyo University are famous for rigorous theory, but the Department of Economics has just rolled out its most grueling capstone challenge in history. Welcome to Ramen Nights & Budget Bites, an immersive culinary management strategy game where textbook economic theories clash with the fast-paced reality of Tokyo’s competitive restaurant industry.\n\nYour objective is simple on paper, yet brutal in execution: to graduate with your master\'s degree, you and your group of elite postgraduate classmates must found, operate, and scale a profitable ramen shop franchise across five iconic Tokyo districts. Starting with minimal capital and a bare-bones cart in a cramped alley, you must apply macroeconomic principles, supply chain logistics, and micro-pricing strategies to scale up into a multi-district culinary empire.\n\nFeaturing five simulated Tokyo districts (from student hubs to high-throughput commuter stations and luxury Ginza storefronts), dynamic classmate recruitment with dedicated skill trees, a custom broth & tare recipe lab, real-time balance sheet financial dashboards, day/night shift cycles, and weather-driven demand—engineered entirely from scratch with zero runtime dependencies on pure HTML5 Canvas and Web Audio chiptunes.',
         category: 'Games & Entertainment',
-        tags: ['Idle Clicker', '8-Bit', '16-Bit', 'Chiptune', 'JRPG', 'Tycoon'],
-        status: 'PRE-ALPHA',
-        url: 'https://ramen.tehwiz.com',
-        hook: 'Cozy retro ramen management. Zero paywalls, zero predatory timers, pure 16-bit nostalgia.',
-        agitation: 'Tired of mobile games designed around cooldown timers, battle passes, and predatory microtransactions that ruin the joy of play?',
-        enemyFriction: 'Mobile gaming is saturated with predatory microtransactions, energy timers, and pay-to-win mechanics that turn casual gaming into a financial chore.',
-        uniqueMechanism: 'A completed, zero-dependency 8-bit/16-bit JRPG idle management game built on pure HTML5 Canvas and Web Audio chiptune synthesis. Features a procedural district map, crafting trees, persistent local storage save-states, and narrative cutscenes.',
-        transformation: 'Players experience cozy, nostalgic management progression without pop-up ads or predatory paywalls.',
+        tags: ['Simulation', 'Tycoon', 'Economics', 'JRPG', 'Chiptune', 'HTML5 Canvas'],
+        status: 'LIVE',
+        url: 'https://tehwiz.itch.io/ramen-nights-and-budget-bites',
+        hook: 'Where textbook economic theory clashes with Tokyo’s cutthroat restaurant industry. Scale from a cramped alley cart to a five-district empire to graduate.',
+        agitation: 'Tired of superficial restaurant tycoons hiding zero-strategy gameplay behind artificial energy meters, predatory timers, and pay-to-win microtransactions?',
+        enemyFriction: 'Most modern culinary sims are predatory cash grabs: Skinner boxes engineered to gate progress behind microtransactions rather than rewarding genuine market insight, pricing strategy, and operational mastery.',
+        uniqueMechanism: 'A deep economic and culinary strategy engine: 5 distinct Tokyo simulated districts, Tokyo University classmate skill trees, broth hydration R&D, fluctuating ingredient inflation, real-time P&L dashboards, and weather-driven demand—built entirely on zero-dependency HTML5 Canvas and dynamic Web Audio chiptune synthesis.',
+        transformation: 'Master the authentic grit and triumph of entrepreneurship: transforming an alley ramen cart into a five-star multi-district empire and graduating at the top of your Tokyo University class.',
         links: {
-            liveUrl: 'https://ramen.tehwiz.com'
+            liveUrl: 'https://ramen.tehwiz.com',
+            itchIoUrl: 'https://tehwiz.itch.io/ramen-nights-and-budget-bites'
         },
         license: {
-            name: 'Proprietary / Free Web & Indie Game',
-            summary: 'Free to play in-browser; standalone mobile release.'
+            name: 'Proprietary / Free Indie Game',
+            url: 'https://tehwiz.itch.io/ramen-nights-and-budget-bites',
+            summary: 'Free to play on Itch.io and in-browser with an optional $1 recommended donation.'
         },
         pricing: [
             {
-                plan: 'Browser Play',
+                plan: 'Itch.io Release',
                 price: 'FREE',
-                description: 'Full single-player browser gaming experience with zero paywalls.',
+                period: '($1 rec. donation)',
+                description: 'Play and download on Itch.io. Pay what you want or support indie development with an optional $1 recommended donation.',
                 highlighted: true,
-                badge: 'Free Web'
+                badge: 'Itch.io'
             },
             {
-                plan: 'Mobile App Store Edition',
-                price: '$0.99',
-                period: 'one-time',
-                description: 'Standalone indie title at $0.99 / $1.00 on app stores; targeted for Google Play Pass inclusion.',
-                badge: 'Play Pass'
+                plan: 'Browser Beta Edition',
+                price: 'FREE',
+                description: 'Full single-player browser gaming experience with zero paywalls, ads, or predatory timers.',
+                badge: 'Try Beta'
             }
         ],
         highlights: [
-            'Zero dependencies: Pure HTML5 Canvas and Web Audio chiptune synthesis.',
-            'Procedural Tokyo ramen district map with extensive broth & noodle crafting trees.',
-            'Cozy nostalgic progression: zero paywalls, zero energy meters, zero microtransactions.',
-            'Persistent local storage save-states and charming pixel-art narrative cutscenes.'
+            'Five Distinct Tokyo Districts: Master student residential hubs, high-traffic commuter stations (Shinjuku & Shibuya), and high-margin luxury zones (Ginza).',
+            'Dynamic Classmate Recruitment & Skill Trees: Recruit Tokyo University grad students, assign roles (finance majors on cash, supply chain on stock), and manage stamina/morale.',
+            'Deep Kitchen & Economic Simulation: Custom Recipe Lab (Tonkotsu, Shoyu, Miso, Shio, noodle hydration, tare) balanced against live balance sheets and inflation.',
+            'Weather, Time & Shift Systems: Real-time day/night rush hours and temperature dynamics (rainy broth surges vs. hot summer Hiyashi Chuka specials).',
+            'Store Customization & Story Vignettes: Unlock authentic noren curtains, neon signs, challenge exams, retro arcade minigames, and narrative post-grad cutscenes.',
+            '100% Sovereign & Zero-Dependency: Crafted in pure vanilla HTML5 Canvas with native Web Audio chiptunes—zero external engines, zero ads, zero paywalls.'
         ],
         specs: [
-            { label: 'Engine', value: 'Zero-Dependency Vanilla HTML5 Canvas' },
-            { label: 'Audio', value: 'Web Audio API Dynamic Chiptune Synthesizer' },
-            { label: 'Monetization', value: 'Zero Paywalls / Google Play Pass Target ($0.99 / $1.00)' },
-            { label: 'Saves', value: 'Persistent Local-First Storage Save States' }
-        ]
+            { label: 'Academic Setting', value: 'Tokyo University Dept. of Economics Capstone' },
+            { label: 'Map Scope', value: '5 Simulated Tokyo Districts (Residential to Ginza)' },
+            { label: 'Simulation Systems', value: 'P&L Dashboards, Supply Chains, Recipe R&D & Inflation' },
+            { label: 'Crew System', value: 'Classmate Recruitment, Skill Trees & Shift Stamina' },
+            { label: 'Environmental Engine', value: 'Day/Night Shift Cycles & Adaptive Weather Dynamics' },
+            { label: 'Engine Stack', value: 'Zero-Dependency Vanilla HTML5 Canvas' },
+            { label: 'Audio Architecture', value: 'Web Audio API Dynamic Chiptune Synthesizer' },
+            { label: 'Monetization Model', value: '0% Microtransactions / Zero Predatory Timers' },
+            { label: 'Distribution & Saves', value: 'Itch.io & Web / Persistent Local-First Saves' }
+        ],
+        architectureNotes: 'Engineered as a zero-dependency software architecture showcase: pure vanilla HTML5 Canvas 2D rendering and dynamic procedural chiptune synthesis via the native Web Audio API. Zero external runtime dependencies (no Phaser, no PixiJS, no sound frameworks). Features deterministic state management, persistent local storage save-states with transactional integrity, and zero telemetry or server calls for total offline sovereignty.'
     },
     {
         id: 'pocket-monstars',

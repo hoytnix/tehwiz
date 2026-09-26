@@ -1,6 +1,7 @@
 import React from 'react';
 import { HomeHero } from './components/HomeHero';
 import { StatsMatrix } from './components/StatsMatrix';
+import { RamenNightsSpotlight } from './components/RamenNightsSpotlight';
 import { FlagshipSpotlight } from './components/FlagshipSpotlight';
 import { CorePillars } from './components/CorePillars';
 import { TechArsenal } from './components/TechArsenal';
@@ -11,6 +12,7 @@ export const HomeView: React.FC = () => {
       <div className="w-full max-w-6xl flex flex-col gap-12 sm:gap-16 pb-16">
         <HomeHero />
         <StatsMatrix />
+        <RamenNightsSpotlight />
         <FlagshipSpotlight />
         <CorePillars />
         <TechArsenal />

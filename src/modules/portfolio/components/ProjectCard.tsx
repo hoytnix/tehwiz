@@ -54,6 +54,7 @@ export const ProjectCard: React.FC<{
   const singleGithub = project.links?.githubUrl;
   const hasMultipleRepos = project.links?.githubUrls && project.links.githubUrls.length > 0;
   const huggingFace = project.links?.huggingFaceUrl;
+  const itchIo = project.links?.itchIoUrl;
 
   // Primary pricing tier summary
   const featuredPricing = project.pricing?.find(p => p.highlighted) || project.pricing?.[0];
@@ -177,6 +178,18 @@ export const ProjectCard: React.FC<{
         </Link>
 
         <div className="flex items-center gap-1.5">
+          {itchIo && (
+            <a
+              href={itchIo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-1.5 rounded-lg text-rose-400 hover:text-white hover:bg-rose-500/20 transition-colors"
+              title="Play / Download on Itch.io"
+            >
+              <span className="material-icons text-sm">sports_esports</span>
+            </a>
+          )}
+
           {huggingFace && (
             <a
               href={huggingFace}

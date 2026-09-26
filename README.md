@@ -11,6 +11,7 @@ The official portfolio and application hub for **TehWiz Productions** (Michael S
 ## Featured Portfolio Projects
 
 - **Yuli** (`yuli`): Autonomous Cognitive Persona Engine & Mind-Reading MBTI Diagnostic trained on multi-turn Reddit chats. Runs on mobile web / desktop. (BSL 1.1)
+- **Ramen Nights & Budget Bites** (`ramen-nights`): Tokyo Economics Capstone Tycoon — Culinary Strategy, Supply Chains & 16-Bit Nostalgia on Vanilla Canvas. Published on [Itch.io](https://tehwiz.itch.io/ramen-nights-and-budget-bites). (Free / $1 Rec. Donation)
 - **Purple Canary** (`purple-canary`): Computer Vision Reagent Analysis & Harm-Reduction Scanner. (MIT)
 - **Aevloc** (`aevloc`): Online Reputation Management Firewall protecting local businesses from damaging reviews. (Commercial SaaS)
 - **Alembic Quest** (`alembic-quest`): High-Velocity Canvassing Operating System & Spatial Territory Radar with 1-click address skiptracing. (SaaS)

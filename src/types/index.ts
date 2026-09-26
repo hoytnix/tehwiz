@@ -2,7 +2,8 @@ export enum AppView {
   HOME = 'HOME',
   PORTFOLIO = 'PORTFOLIO',
   PROMPTS = 'PROMPTS',
-  VLOG = 'VLOG'
+  VLOG = 'VLOG',
+  MENU = 'MENU'
 }
 
 export interface VlogEntry {
@@ -34,6 +35,7 @@ export interface ProjectLinks {
   githubUrl?: string;
   githubUrls?: { label: string; url: string }[];
   huggingFaceUrl?: string;
+  itchIoUrl?: string;
   licenseUrl?: string;
 }
 
