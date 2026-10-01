@@ -25,7 +25,7 @@ export const HomeHero: React.FC = () => {
       {/* Subtitle */}
       <p className="text-slate-300 text-base sm:text-lg lg:text-xl font-normal max-w-3xl leading-relaxed mb-8">
         <strong className="text-white font-semibold">TehWiz Productions</strong> by{' '}
-        <span className="text-indigo-300 font-semibold">Michael Scott Hoyt</span>. Senior systems architect coding with prose, shipping 100% on-device AI models, objective harm-reduction diagnostics, and high-performance applications since 2009.
+        <span className="text-indigo-300 font-semibold">Michael Scott Hoyt</span>. At age 5, Michael asked his uncle how Mario&apos;s Goombas move. His uncle replied: <em className="text-indigo-200 not-italic font-medium">&ldquo;That&apos;s AI.&rdquo;</em> That spark ignited a lifelong quest—from childhood obsession to an AI Master&apos;s degree and building on-device cognitive engines like Yuli and AI NPC SDKs for games. The through-line of everything TehWiz crafts: <span className="text-white font-semibold">teaching machines to feel alive</span>. It all started with Goombas.
       </p>
 
       {/* Quick CTA Actions */}

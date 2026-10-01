@@ -27,12 +27,12 @@ export const FlagshipSpotlight: React.FC = () => {
 
           {/* Quote / Hook */}
           <p className="text-indigo-200 text-sm sm:text-base italic font-medium mb-4">
-            "The edge-native cognitive companion that reads your mind and refuses to lie to you."
+            &ldquo;Teaching machines to feel alive: reading personality patterns on-device to build game characters and companions that truly understand you.&rdquo;
           </p>
 
           {/* Description */}
           <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6 max-w-3xl">
-            A sovereign cognitive companion running on an 𝔽₂⁴ Boolean Hypercube state space with four operational minds (Ego, Shadow, Subconscious, Superego) switched via bitwise XOR. Features an inline Pushdown Automaton thought firewall delivering 70–110 TPS on mobile WebGPU with sub-200ms time-to-first-token. Zero cloud API bills.
+            Born from an inquiry into how game characters move, Yuli is TehWiz&apos;s sovereign on-device cognitive companion running on an 𝔽₂⁴ Boolean Hypercube state space. By reading human MBTI personality patterns in real time across four operational minds, Yuli delivers 70–110 TPS on mobile WebGPU with sub-200ms time-to-first-token—paving the way for next-generation AI NPCs.
           </p>
 
           {/* Feature Chips */}
