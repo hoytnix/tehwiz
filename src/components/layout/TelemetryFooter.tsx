@@ -7,7 +7,7 @@ export const TelemetryFooter: React.FC = () => {
         <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 shadow-[0_0_6px_rgba(99,102,241,0.6)]"></span>
         <span className="text-slate-300">A TehWiz Production</span>
         <span className="text-slate-600">/</span>
-        <span className="text-slate-400 hidden sm:inline">Michael Scott Hoyt // Sovereign Edge Architect</span>
+        <span className="text-slate-400 hidden sm:inline">Michael Scott Hoyt // © 2026 ISICECAKEOISIS.</span>
       </div>
 
       <div className="flex items-center gap-4 text-slate-400">
