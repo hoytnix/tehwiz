@@ -4,17 +4,10 @@ import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { SYSTEM_NAME, APP_VERSION } from '@/config/constants';
-import { APP_REGISTRY } from '@/config/appRegistry';
 
 export const Header: React.FC = () => {
   const pathname = usePathname();
-
-  const isItemActive = (href: string) => {
-    if (href === '/') {
-      return pathname === '/';
-    }
-    return pathname.startsWith(href);
-  };
+  const isMenuActive = pathname.startsWith('/menu');
 
   return (
     <header className="h-16 flex items-center justify-between px-4 sm:px-6 z-40 shrink-0 relative glass-panel mx-3 sm:mx-4 mt-3 rounded-2xl border border-white/[0.08] shadow-2xl">
@@ -45,34 +38,6 @@ export const Header: React.FC = () => {
             </span>
           </div>
         </Link>
-
-        {/* Desktop Navigation Switcher */}
-        <nav className="hidden md:flex items-center gap-1 ml-2 p-1 rounded-xl bg-black/40 border border-white/[0.06] backdrop-blur-md">
-          {APP_REGISTRY.map((item) => {
-            const active = isItemActive(item.href);
-            return (
-              <Link
-                key={item.id}
-                href={item.href}
-                className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-2 transition-all duration-200 cursor-pointer ${
-                  active
-                    ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-md shadow-indigo-600/30 border border-indigo-400/40'
-                    : 'text-slate-400 hover:text-slate-200 hover:bg-white/[0.06]'
-                }`}
-              >
-                <span className="material-icons text-sm opacity-80">{item.icon}</span>
-                <span>{item.shortLabel || item.label}</span>
-                {item.badge && (
-                  <span className={`text-[9px] px-1.5 py-0.2 rounded-full font-mono font-bold ${
-                    active ? 'bg-black/30 text-indigo-200' : 'bg-white/10 text-slate-400'
-                  }`}>
-                    {item.badge}
-                  </span>
-                )}
-              </Link>
-            );
-          })}
-        </nav>
       </div>
 
       {/* Status Indicators, Menu Page Link & External Quick Links */}
@@ -93,7 +58,7 @@ export const Header: React.FC = () => {
         <Link
           href="/menu"
           className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-xl transition-all duration-200 border ${
-            isItemActive('/menu')
+            isMenuActive
               ? 'bg-gradient-to-r from-fuchsia-600 to-pink-600 text-white shadow-lg shadow-pink-600/30 border-pink-400/40'
               : 'bg-white/[0.05] hover:bg-white/[0.1] text-slate-200 hover:text-white border-white/10 hover:border-indigo-400/30'
           }`}
