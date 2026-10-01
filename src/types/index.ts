@@ -2,6 +2,7 @@ export enum AppView {
   HOME = 'HOME',
   PORTFOLIO = 'PORTFOLIO',
   PROMPTS = 'PROMPTS',
+  BLOG = 'BLOG',
   VLOG = 'VLOG',
   MENU = 'MENU'
 }

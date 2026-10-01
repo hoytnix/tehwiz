@@ -61,6 +61,16 @@ export const MENU_SECTIONS: NavSection[] = [
         badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-500/30'
       },
       {
+        id: 'blog',
+        title: 'Engineering Blog',
+        subtitle: 'Architecture & Edge AI Essays',
+        description: 'Deep-dive architectural essays, on-device AI engineering breakdowns, WebGPU pipelines, and sovereign systems.',
+        href: '/blog',
+        icon: 'article',
+        badge: 'Articles',
+        badgeColor: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30'
+      },
+      {
         id: 'vlog',
         title: 'Engineering Vlogs',
         subtitle: 'Streams & Architecture Logs',

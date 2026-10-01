@@ -58,6 +58,19 @@ export const APP_REGISTRY: AppConfig[] = [
     borderColor: 'border-amber-500/40'
   },
   { 
+    id: AppView.BLOG, 
+    href: '/blog',
+    label: 'Engineering Blog', 
+    shortLabel: 'Blog',
+    description: 'Deep architectural writeups, sovereign AI systems analysis, and engineering reflections.',
+    icon: 'article', 
+    gradient: 'from-emerald-500 via-teal-600 to-cyan-600',
+    glowColor: 'emerald',
+    textColor: 'text-emerald-400',
+    glow: 'shadow-[0_0_30px_rgba(16,185,129,0.3)]',
+    borderColor: 'border-emerald-500/40'
+  },
+  { 
     id: AppView.VLOG, 
     href: '/vlog',
     label: 'Engineering Vlogs', 
