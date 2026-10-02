@@ -30,7 +30,10 @@ export const metadata: Metadata = {
     creator: SITE_CONFIG.handle
   },
   alternates: {
-    canonical: `${SITE_CONFIG.url}/blog`
+    canonical: `${SITE_CONFIG.url}/blog`,
+    types: {
+      'application/rss+xml': `${SITE_CONFIG.url}/rss.xml`
+    }
   }
 };
 

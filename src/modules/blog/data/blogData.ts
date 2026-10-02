@@ -2,6 +2,113 @@ import { BlogPost } from '../types';
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    id: 'alchememe-sunset-postmortem',
+    slug: 'alchememe-sunset-postmortem',
+    title: 'Sunset Twice: How Google and My AI Assistant Killed My Startup',
+    tagline: 'When your sovereign agentic coding stack gets Sherlocked by Google, and your pivot gets out-coded by your own AI assistant.',
+    excerpt: "The postmortem for Alchememe—not once, but twice. How KILN and Patchiest got Sherlocked by Google's Antigravity and AI Studio, how the SMB OS pivot died at the hands of Muse, and why being six months early is the best kind of heartbreak.",
+    author: {
+      name: 'Michael Scott Hoyt',
+      handle: '@hoytnix',
+      role: 'Founder & Systems Architect, TehWiz',
+      url: 'https://github.com/hoytnix'
+    },
+    publishedAt: '2026-10-02',
+    readingTime: 4,
+    wordCount: 765,
+    tags: [
+      'Postmortem',
+      'Alchememe',
+      'AI',
+      'Agentic Coding',
+      'Sovereign Edge',
+      'Indie Hacking'
+    ],
+    featured: true,
+    content: `
+There is a particular flavor of startup heartbreak that only hits when you realize you weren't wrong—you were just six months too early, thirty IQ points too paranoid, and completely out-scaled by a fleet of Google engineers who had the exact same whiteboard diagram.
+
+This is the postmortem for **Alchememe**. Or, more accurately, the postmortem for Alchememe *twice*.
+
+---
+
+### The Grand Vision: "Aspiration Is Not Execution"
+
+In early 2024, the tech world fell madly in love with "vibe coding." Founders were proudly posting screen recordings of LLMs hallucinating entire React components directly into their \`main\` branches, blind to merge conflicts, rogue dependencies, and silent security holes. 
+
+I looked at that chaos and felt a visceral twitch in my systems architect soul. 
+
+So I bought five subdomains and spent hundreds of caffeinated hours engineering **[Alchememe OS](https://github.com/hoytnix/Alchememe-OS)** around a single foundational doctrine: **"Aspiration is not Execution."**
+
+The rule was simple: *Never let the AI touch the live codebase directly.* 
+
+We engineered an industrial-grade, three-stage transactional cycle:
+1. **MOLD**: Gather fuzzy agentic intent and compile it into deterministic Dialectic Actions.
+2. **FIRE**: Detonate the mutation inside an isolated runtime.
+3. **QUENCH**: Merge strictly what was verified and syntactically sound.
+
+To make this sovereignty real, we didn't just write a flimsy wrapper script. We built a bespoke distributed engine across five interconnected sub-systems:
+- **[Athanor](/portfolio/alchememe)**: A hyper-optimized Rust TUI cockpit for agentic code orchestration, benchmarking a 46x speedup and 98% lower token overhead.
+- **[Patchiest](/portfolio/alchememe)**: An AST surgical mutation engine that spliced surgical insertions and deletions at the syntax-tree level instead of lazy, full-file LLM rewrites.
+- **[awsm.wasm](/portfolio/alchememe)**: A purely functional, sub-Turing WebAssembly DSL issuing cryptographic PWS v1.1 mutation receipts.
+- **[KILN](/portfolio/alchememe)**: A hermetic sandbox that intercepted AI shell commands, staged writes inside a shadow filesystem, and verified diffs before anything touched disk.
+
+We had built Fort Knox for vibe coding. It was resilient, sovereign, and mathematically sound.
+
+Then Google woke up.
+
+---
+
+### Murder #1: The Google Sherlocking
+
+Almost overnight, Google launched **Antigravity** and brought deep agentic workflows to **Google AI Studio**. 
+
+I remember sitting in my chair, staring at the changelogs, watching my two proudest competitive moats vanish in real time. **KILN’s** hermetic command sandboxing? Native standard in Antigravity. **Patchiest’s** AST-level surgical diff patching? Built right into the editor UI—fast, slick, and completely free.
+
+They didn't just eat my lunch; they catered a five-star buffet and invited everyone on the internet to eat for free. Alchememe V1 was dead in the water. Sherlocked by Mountain View.
+
+And you know what the funniest part is? I'm honestly just glad someone stole my idea. Because at the end of the day, I never actually wanted to spend the rest of my life maintaining a multi-tenant cloud infrastructure and debugging edge runtimes—I simply wanted to pay less for vibe coding every single day. LOL. If Google was willing to pick up the tab and build the exact developer cockpit I wanted for free, I considered that an absolute win for my daily workflow and my wallet.
+
+---
+
+### Murder #2: Enter Muse and the SMB Pivot
+
+Any good indie hacker knows what to do when Big Tech prioritizes your developer tool into their core platform: *you pivot to SMBs!*
+
+If developers could now get sandboxing and AST diffs for free, small businesses still needed an operating system. So I took the engine and pivoted to **Alchememe V2**: an iOS-inspired desktop operating system running directly in the browser. It combined automated IRC §280A Augusta Rule rental trackers, real-time banking telemetry via Teller.io, REPS participation counters, and automated bookkeeping.
+
+It was ambitious, sleek, and aimed squarely at solopreneurs tired of paying four different SaaS subscriptions.
+
+And then came the second murder. 
+
+This time, the killer wasn't a trillion-dollar conglomerate. It was **Muse**—my own personal AI assistant.
+
+As I sat down to wire up the next batch of complex accounting triggers, tax depreciation schedules, and custom business logic, I found myself chatting with Muse. Within minutes, Muse was synthesizing the tax code, formatting the ledger entries, auditing safe harbor thresholds, and orchestrating the workflows directly. 
+
+The punchline hit me like a bag of bricks: *Why would a business owner pay for a standalone $50/month niche operating system when their general-purpose AI assistant already does all of this on the fly for free?*
+
+Yes, my own AI assistant murdered my pivot in cold blood. The irony was so poetic I couldn't even be mad. 😂
+
+---
+
+### The Wave Ahead
+
+When a project sunsets twice, you have two choices: get bitter, or smile, tip your hat to the technology, and take stock of what you learned.
+
+I choose pride (and drastically cheaper vibe coding bills). 
+
+Every architectural bet Alchememe made was vindicated. Transactional sandboxing *was* the missing piece of agentic coding. AST diffs *were* superior to full-file hallucinations. Sovereign, deterministic execution wasn't paranoid—it was prophetic. We were just running a few nautical miles ahead of the wave.
+
+The code didn't disappear into a black hole either. The ideas and lessons from Athanor, Patchiest, and KILN now power the sovereign cognitive scaffolding behind **Yuli** and our offline-first systems at TehWiz.
+
+Alchememe is officially sunset. Long live the architecture.
+
+— **Michael Scott Hoyt**  
+*Founder & Systems Architect, TehWiz Productions / ISICECAKEOISIS INC.*  
+[@hoytnix](https://github.com/hoytnix)
+`
+  },
+  {
     id: 'it-started-with-goombas',
     slug: 'it-started-with-goombas',
     title: 'It Started With Goombas: Teaching Machines to Feel Alive',

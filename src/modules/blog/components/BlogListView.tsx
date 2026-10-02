@@ -64,7 +64,18 @@ export const BlogListView: React.FC<BlogListViewProps> = ({
       {/* Breadcrumbs & Share Bar */}
       <div className="flex items-center justify-between gap-3 mb-4 flex-shrink-0">
         <Breadcrumbs items={[{ label: 'Engineering Blog', icon: 'article' }]} />
-        <PermalinkButton path="/blog" label="Share Blog" />
+        <div className="flex items-center gap-2">
+          <CyberButton
+            variant="secondary"
+            size="sm"
+            icon="rss_feed"
+            href="/rss.xml"
+            target="_blank"
+          >
+            RSS Feed
+          </CyberButton>
+          <PermalinkButton path="/blog" label="Share Blog" />
+        </div>
       </div>
 
       {/* Page Header */}
