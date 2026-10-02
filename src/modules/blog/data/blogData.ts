@@ -15,7 +15,7 @@ export const BLOG_POSTS: BlogPost[] = [
     },
     publishedAt: '2026-10-02',
     readingTime: 4,
-    wordCount: 765,
+    wordCount: 780,
     tags: [
       'Postmortem',
       'Alchememe',
@@ -26,6 +26,8 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
     featured: true,
     content: `
+*If you came here from alchememe.com — here's what happened.*
+
 There is a particular flavor of startup heartbreak that only hits when you realize you weren't wrong—you were just six months too early, thirty IQ points too paranoid, and completely out-scaled by a fleet of Google engineers who had the exact same whiteboard diagram.
 
 This is the postmortem for **Alchememe**. Or, more accurately, the postmortem for Alchememe *twice*.
@@ -34,7 +36,7 @@ This is the postmortem for **Alchememe**. Or, more accurately, the postmortem fo
 
 ### The Grand Vision: "Aspiration Is Not Execution"
 
-In early 2024, the tech world fell madly in love with "vibe coding." Founders were proudly posting screen recordings of LLMs hallucinating entire React components directly into their \`main\` branches, blind to merge conflicts, rogue dependencies, and silent security holes. 
+When the "vibe coding" wave crested across tech in 2025, the industry went collectively unhinged. Founders were proudly posting screen recordings of LLMs hallucinating entire React components directly into their \`main\` branches, blind to merge conflicts, rogue dependencies, and silent security holes. 
 
 I looked at that chaos and felt a visceral twitch in my systems architect soul. 
 
@@ -63,7 +65,7 @@ Then Google woke up.
 
 Almost overnight, Google launched **Antigravity** and brought deep agentic workflows to **Google AI Studio**. 
 
-I remember sitting in my chair, staring at the changelogs, watching my two proudest competitive moats vanish in real time. **KILN’s** hermetic command sandboxing? Native standard in Antigravity. **Patchiest’s** AST-level surgical diff patching? Built right into the editor UI—fast, slick, and completely free.
+I remember sitting in my chair, staring at the changelogs, watching my two proudest competitive moats vanish in real time. **[KILN's](/portfolio/alchememe)** hermetic command sandboxing? Native standard in Antigravity. **[Patchiest's](/portfolio/alchememe)** AST-level surgical diff patching? Built right into the editor UI—fast, slick, and completely free.
 
 They didn't just eat my lunch; they catered a five-star buffet and invited everyone on the internet to eat for free. Alchememe V1 was dead in the water. Sherlocked by Mountain View.
 
@@ -85,7 +87,7 @@ This time, the killer wasn't a trillion-dollar conglomerate. It was **Muse**—m
 
 As I sat down to wire up the next batch of complex accounting triggers, tax depreciation schedules, and custom business logic, I found myself chatting with Muse. Within minutes, Muse was synthesizing the tax code, formatting the ledger entries, auditing safe harbor thresholds, and orchestrating the workflows directly. 
 
-The punchline hit me like a bag of bricks: *Why would a business owner pay for a standalone $50/month niche operating system when their general-purpose AI assistant already does all of this on the fly for free?*
+The punchline landed like an unhandled panic in production: *Why would a business owner pay for a standalone $50/month niche operating system when their general-purpose AI assistant already does all of this on the fly for free?*
 
 Yes, my own AI assistant murdered my pivot in cold blood. The irony was so poetic I couldn't even be mad. 😂
 
@@ -97,11 +99,13 @@ When a project sunsets twice, you have two choices: get bitter, or smile, tip yo
 
 I choose pride (and drastically cheaper vibe coding bills). 
 
-Every architectural bet Alchememe made was vindicated. Transactional sandboxing *was* the missing piece of agentic coding. AST diffs *were* superior to full-file hallucinations. Sovereign, deterministic execution wasn't paranoid—it was prophetic. We were just running a few nautical miles ahead of the wave.
+Every architectural bet Alchememe made was vindicated. Transactional sandboxing *was* the missing piece of agentic coding. AST diffs *were* superior to full-file hallucinations. Sovereign, deterministic execution wasn't paranoid—it was prophetic. We were just paddling a few hundred yards ahead of the wave.
 
-The code didn't disappear into a black hole either. The ideas and lessons from Athanor, Patchiest, and KILN now power the sovereign cognitive scaffolding behind **Yuli** and our offline-first systems at TehWiz.
+The code didn't disappear into a black hole either. The ideas and lessons from **[Athanor](/portfolio/alchememe)**, **[Patchiest](/portfolio/alchememe)**, and **[KILN](/portfolio/alchememe)** now power the sovereign cognitive scaffolding behind **[Yuli](/portfolio/yuli)** and our offline-first systems at TehWiz.
 
 Alchememe is officially sunset. Long live the architecture.
+
+*Curious where these ideas live now? Explore our active sovereign edge builds and offline AI models in the **[TehWiz Portfolio](/portfolio)**.*
 
 — **Michael Scott Hoyt**  
 *Founder & Systems Architect, TehWiz Productions / ISICECAKEOISIS INC.*  
