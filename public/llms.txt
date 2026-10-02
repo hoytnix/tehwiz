@@ -1,0 +1,26 @@
+# TehWiz Productions
+
+> Sovereign edge AI, cognitive architecture, and computer vision lab founded by Michael Scott Hoyt. On-device AI companions, game engines, and developer tooling. © 2026 ISICECAKEOISIS INC.
+
+## Flagship: Yuli
+
+- [Yuli Engine Architecture](https://tehwiz.com/portfolio/yuli): Autonomous cognitive persona engine running on an F₂⁴ Boolean hypercube state space; real-time MBTI personality-pattern detection; 70–110 TPS on mobile WebGPU with sub-200ms time-to-first-token. BSL 1.1 licensed.
+- [Yuli Web App](https://project-yuli.netlify.app/): In-browser WebGPU live beta.
+
+## Games
+
+- [Ramen Nights & Budget Bites](https://tehwiz.com/portfolio/ramen-nights): Tokyo University economics capstone — build a ramen franchise across five Tokyo districts. Zero-dependency HTML5 Canvas with Web Audio chiptunes.
+- [Ramen Nights on Itch.io](https://tehwiz.itch.io/ramen-nights-and-budget-bites): Free download ($1 recommended donation).
+- [Ramen Nights Web Beta](https://ramen.tehwiz.com/): Playable in-browser beta.
+
+## Workstation
+
+- [Portfolio](https://tehwiz.com/portfolio): Catalog of 14+ production deployments, including the Purple Canary harm-reduction scanner.
+- [Prompt Vault](https://tehwiz.com/prompts): System instructions, cognitive loops, and expert personas.
+- [Blog](https://tehwiz.com/blog): Technical essays on edge AI, PyTorch, and WebGPU.
+- [Vlog](https://tehwiz.com/vlog): Build logs and App Store journals.
+- [System Menu](https://tehwiz.com/menu): Navigation index for all workstation apps.
+
+## Code
+
+- [Hoytnix on GitHub](https://github.com/hoytnix): Open-source repos and FLOSS experiments by Michael Scott Hoyt.
