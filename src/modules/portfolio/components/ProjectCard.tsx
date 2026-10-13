@@ -39,6 +39,14 @@ export const ProjectCard: React.FC<{
           ping: false,
           glowColor: 'amber' as const
         };
+      case 'Deprecated':
+      case 'DEPRECATED':
+        return {
+          bg: 'bg-rose-500/15 text-rose-300 border-rose-500/30',
+          dot: 'bg-rose-400',
+          ping: false,
+          glowColor: 'amber' as const
+        };
       default:
         return {
           bg: 'bg-slate-500/15 text-slate-300 border-slate-500/30',

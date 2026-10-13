@@ -43,11 +43,11 @@ export const MENU_SECTIONS: NavSection[] = [
       {
         id: 'portfolio',
         title: 'Engineering Projects',
-        subtitle: '14 Sovereign Systems',
+        subtitle: '15 Sovereign Systems',
         description: 'Production catalog of sovereign on-device AI engines, WebGPU apps, diagnostic tools, and Web3 systems.',
         href: '/portfolio',
         icon: 'layers',
-        badge: '14 Systems',
+        badge: '15 Systems',
         badgeColor: 'bg-purple-500/20 text-purple-300 border-purple-500/30'
       },
       {
@@ -89,7 +89,7 @@ export const MENU_SECTIONS: NavSection[] = [
     icon: 'rocket_launch',
     accentColor: 'purple',
     viewAllHref: '/portfolio',
-    viewAllLabel: 'View All 14 Projects',
+    viewAllLabel: 'View All 15 Projects',
     items: [
       {
         id: 'yuli-live',

@@ -84,7 +84,7 @@ export const MenuView: React.FC = () => {
             {/* Quick Stats Grid */}
             <div className="grid grid-cols-2 gap-3 sm:gap-4 shrink-0">
               <div className="px-4 py-3 rounded-2xl bg-black/40 border border-white/10 flex flex-col backdrop-blur-md">
-                <span className="text-2xl sm:text-3xl font-extrabold text-indigo-300 font-mono">14</span>
+                <span className="text-2xl sm:text-3xl font-extrabold text-indigo-300 font-mono">15</span>
                 <span className="text-[11px] font-mono text-slate-400 uppercase tracking-wider">AI Systems</span>
               </div>
               <div className="px-4 py-3 rounded-2xl bg-black/40 border border-white/10 flex flex-col backdrop-blur-md">

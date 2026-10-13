@@ -340,13 +340,69 @@ export const MOCK_PROJECTS: Project[] = [
         ]
     },
     {
+        id: 'caffeinemd',
+        title: 'CaffeineMD',
+        tagline: 'High-performance, local-first Markdown knowledge base & wiki',
+        description: 'A sovereign personal knowledge management system modeled after Obsidian and Notion, powered by ProseMirror, Tiptap v2, IndexedDB, and the native File System Access API with bidirectional wiki-links and instant diff viewing.',
+        category: 'Productivity',
+        status: 'LIVE',
+        url: 'https://www.caffeinemd.wiki',
+        githubUrl: 'https://github.com/hoytnix/CaffeineMD',
+        tags: ['Next.js', 'TipTap', 'Markdown', 'IndexedDB', 'PWA', 'Local-First'],
+        featured: true,
+        stats: {
+            architecture: 'Local-First PWA',
+            editor: 'TipTap v2 / ProseMirror',
+            storage: 'IndexedDB + File System Access API',
+            lockIn: '0% (Pure Markdown)'
+        },
+        hook: 'Sovereign, local-first Markdown knowledge base & personal wiki with zero cloud dependency.',
+        agitation: 'Tired of cloud note apps holding your private thoughts hostage behind monthly subscriptions and proprietary file silos?',
+        enemyFriction: 'Proprietary note-taking and knowledge management tools store your thoughts in closed cloud silos, suffer from network latency, and risk catastrophic data lock-in. Meanwhile, typical Markdown tools lack real-time visual editing, bidirectional graph linking, and seamless native filesystem mounting.',
+        uniqueMechanism: 'A sovereign, local-first architecture powered by TipTap v2 and ProseMirror running over IndexedDB persistence and the native File System Access API. Features bidirectional [[wiki-links]], instantaneous split-pane plaintext/prose editing, and cryptographic git-style diff inspection without server telemetry.',
+        transformation: 'Own your thoughts with complete sovereignty: write at the speed of thought in a gorgeous WYSIWYG editor while keeping your Markdown files safely mounted directly to your local file system.',
+        links: {
+            liveUrl: 'https://www.caffeinemd.wiki',
+            githubUrl: 'https://github.com/hoytnix/CaffeineMD'
+        },
+        license: {
+            name: 'MIT License',
+            url: 'https://github.com/hoytnix/CaffeineMD/blob/main/LICENSE',
+            summary: '100% Free and Open-Source Software (MIT License).'
+        },
+        pricing: [
+            {
+                plan: 'Open Source / Web App',
+                price: 'FREE',
+                description: '100% free, sovereign local-first personal knowledge management PWA.',
+                highlighted: true,
+                badge: 'MIT Open Source'
+            }
+        ],
+        highlights: [
+            'Native File System Access API for mounting local disk directories directly into the browser.',
+            'TipTap v2 and ProseMirror-driven rich-text editing with instant Markdown bidirectional conversion.',
+            'Zero vendor lock-in with offline-first IndexedDB local storage and instant diff viewing.',
+            'Bidirectional [[wiki-links]] for emergent knowledge graphs and inter-note cross-referencing.',
+            'Installable Progressive Web App (PWA) running completely in-browser with zero telemetry.'
+        ],
+        specs: [
+            { label: 'Architecture', value: 'Local-First Sovereign PWA' },
+            { label: 'Editor Engine', value: 'TipTap v2 & ProseMirror Core' },
+            { label: 'Storage Engine', value: 'IndexedDB + Native File System Access API' },
+            { label: 'Linking Engine', value: 'Bidirectional [[Wiki-Links]] & Backlinks' },
+            { label: 'License', value: 'MIT License (100% Free & Open Source)' }
+        ],
+        architectureNotes: 'Engineered as a local-first sovereign knowledge base: zero telemetry, zero server databases, and complete data ownership through IndexedDB and browser-native File System Access API directory mounting.'
+    },
+    {
         id: 'projects',
         title: 'Projects',
         tagline: 'Streamlined Project Management For The Chaotic Mind',
         description: 'Free Trello Alternative. Streamlined Project Management For The Chaotic Mind. Fast card movement, backlog organization, and lightweight task pipelines.',
         category: 'Productivity & Task Management',
         tags: ['Kanban', 'Productivity', 'Task Management'],
-        status: 'MVP',
+        status: 'Deprecated',
         url: 'https://projects.tehwiz.com',
         hook: 'Streamlined visual kanban engineered for fast-moving chaotic minds.',
         agitation: 'Tired of heavyweight enterprise PM software that demands 20 clicks just to move a task card?',

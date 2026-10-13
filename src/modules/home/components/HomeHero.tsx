@@ -37,7 +37,7 @@ export const HomeHero: React.FC = () => {
           href="/portfolio"
           className="shadow-indigo-500/30 shadow-xl"
         >
-          Explore 14 Production Projects
+          Explore 15 Production Projects
         </CyberButton>
 
         <CyberButton

@@ -31,7 +31,7 @@ export const CorePillars: React.FC = () => {
 
               <div className="flex items-center justify-between mb-2">
                 <h3 className="text-xl font-bold text-white group-hover:text-indigo-300 transition-colors">
-                  14 Projects
+                  15 Projects
                 </h3>
                 <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
                   Catalog

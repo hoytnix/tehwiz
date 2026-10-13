@@ -11,7 +11,9 @@ const STATUS_PRIORITY: Record<string, number> = {
   'PRE-ALPHA': 5,
   'POC': 6,
   'CLASSIFIED': 7,
-  'ARCHIVED': 8
+  'ARCHIVED': 8,
+  'Deprecated': 9,
+  'DEPRECATED': 9
 };
 
 export const usePortfolioFilter = (projects: PortfolioItem[]) => {

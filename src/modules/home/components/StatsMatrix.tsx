@@ -2,7 +2,7 @@ import React from 'react';
 
 export const StatsMatrix: React.FC = () => {
   const stats = [
-    { label: 'Production Systems', value: '14+', note: 'Active Live Deployments & Repos' },
+    { label: 'Production Systems', value: '15+', note: 'Active Live Deployments & Repos' },
     { label: 'Edge Architecture', value: '100%', note: 'Sovereign On-Device AI & WebGPU' },
     { label: 'Inference Throughput', value: '70–110', note: 'TPS on Mobile WebGPU (sub-200ms TTFT)' },
     { label: 'Software Craftsmanship', value: '15+ Yrs', note: 'Shipping Products Since 2009' },

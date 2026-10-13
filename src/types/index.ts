@@ -55,8 +55,11 @@ export interface Project {
   links: ProjectLinks;
   license: ProjectLicense;
   pricing: PricingTier[];
-  status: 'LIVE' | 'ARCHIVED' | 'CLASSIFIED' | 'ALPHA' | 'BETA' | 'PRE-ALPHA' | 'POC' | 'MVP';
+  status: 'LIVE' | 'ARCHIVED' | 'CLASSIFIED' | 'ALPHA' | 'BETA' | 'PRE-ALPHA' | 'POC' | 'MVP' | 'Deprecated' | 'DEPRECATED';
   url?: string;
+  githubUrl?: string;
+  featured?: boolean;
+  stats?: Record<string, string>;
   hook?: string;
   agitation?: string;
   enemyFriction?: string;
