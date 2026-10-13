@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google';
 import Script from 'next/script';
+import { Analytics } from '@vercel/analytics/react';
 import { Shell } from '@/components/layout/Shell';
 import { SITE_CONFIG } from '@/config/site';
 import './globals.css';
@@ -74,6 +75,7 @@ export default function RootLayout({
         <Shell>
           {children}
         </Shell>
+        <Analytics />
 
         {/* Prism Core & Autoloader */}
         <Script 
