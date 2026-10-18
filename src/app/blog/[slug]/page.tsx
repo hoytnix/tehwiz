@@ -16,9 +16,15 @@ export async function generateStaticParams() {
   const slugs = BLOG_POSTS.map((post) => ({
     slug: post.slug
   }));
-  // Include legacy hello-world alias
+  // Include legacy and friendly aliases
   if (!slugs.some((s) => s.slug === 'hello-world')) {
     slugs.push({ slug: 'hello-world' });
+  }
+  if (!slugs.some((s) => s.slug === 'blocking-the-skiddies')) {
+    slugs.push({ slug: 'blocking-the-skiddies' });
+  }
+  if (!slugs.some((s) => s.slug === 'blocking-the-skiddies-with-a-single-cloudflare-waf-rule')) {
+    slugs.push({ slug: 'blocking-the-skiddies-with-a-single-cloudflare-waf-rule' });
   }
   return slugs;
 }
@@ -54,13 +60,22 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt || post.publishedAt,
       authors: [post.author.name],
-      tags: post.tags
+      tags: post.tags,
+      images: [
+        {
+          url: SITE_CONFIG.coverImage,
+          width: 1200,
+          height: 630,
+          alt: post.title
+        }
+      ]
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      creator: SITE_CONFIG.handle
+      creator: SITE_CONFIG.handle,
+      images: [SITE_CONFIG.coverImage]
     },
     alternates: {
       canonical: url

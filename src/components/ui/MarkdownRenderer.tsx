@@ -98,6 +98,58 @@ export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
         );
       }
 
+      // Tables
+      if (trimmed.startsWith('|') && trimmed.includes('\n|')) {
+        const rows = trimmed.split('\n').filter((l) => l.trim().startsWith('|'));
+        if (rows.length >= 2) {
+          const headerRow = rows[0];
+          const isSeparator = /^\|[\s\-:|]+\|$/.test(rows[1].trim());
+          const bodyRows = isSeparator ? rows.slice(2) : rows.slice(1);
+
+          const parseCells = (rowStr: string) =>
+            rowStr
+              .trim()
+              .replace(/^\|/, '')
+              .replace(/\|$/, '')
+              .split('|')
+              .map((c) => c.trim());
+
+          const headers = parseCells(headerRow);
+          return (
+            <div
+              key={idx}
+              className="my-6 overflow-x-auto rounded-lg border border-cyan-500/20 bg-slate-950/60 shadow-inner"
+            >
+              <table className="w-full text-left font-mono text-xs sm:text-sm border-collapse">
+                <thead>
+                  <tr className="border-b border-cyan-500/30 bg-cyan-950/40 text-cyan-300">
+                    {headers.map((h, hIdx) => (
+                      <th key={hIdx} className="px-4 py-3 font-bold uppercase tracking-wider">
+                        <span dangerouslySetInnerHTML={{ __html: formatInline(h) }} />
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-cyan-500/10 text-slate-300">
+                  {bodyRows.map((r, rIdx) => {
+                    const cells = parseCells(r);
+                    return (
+                      <tr key={rIdx} className="hover:bg-cyan-950/20 transition-colors">
+                        {cells.map((c, cIdx) => (
+                          <td key={cIdx} className="px-4 py-2.5">
+                            <span dangerouslySetInnerHTML={{ __html: formatInline(c) }} />
+                          </td>
+                        ))}
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          );
+        }
+      }
+
       // Code blocks
       if (trimmed.startsWith('```')) {
         const lines = trimmed.split('\n');

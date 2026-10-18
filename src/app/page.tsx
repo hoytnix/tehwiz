@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { HomeView } from '@/modules/home';
+import { HomePageJsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
   title: {
@@ -9,5 +10,10 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  return <HomeView />;
+  return (
+    <>
+      <HomePageJsonLd />
+      <HomeView />
+    </>
+  );
 }

@@ -2,6 +2,115 @@ import { BlogPost } from '../types';
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    id: 'blocking-the-skiddies-cloudflare-waf',
+    slug: 'blocking-the-skiddies-cloudflare-waf',
+    title: '600,000 Robots, 1 Human: Blocking the Skiddies With a Single Cloudflare WAF Rule',
+    tagline: 'How a 30-day traffic census, one insight about our stack, and a free Cloudflare custom rule deleted an entire species of bot traffic.',
+    excerpt: 'How a 30-day traffic census, one insight about our stack, and a free Cloudflare custom rule deleted an entire species of bot traffic.',
+    author: {
+      name: 'Michael Scott Hoyt',
+      handle: '@hoytnix',
+      role: 'Founder & Systems Architect, TehWiz',
+      url: 'https://github.com/hoytnix'
+    },
+    publishedAt: '2026-10-18',
+    readingTime: 4,
+    wordCount: 667,
+    tags: [
+      'Cloudflare',
+      'Security',
+      'Edge Architecture',
+      'WAF',
+      'Bot Mitigation',
+      'Indie Hacking'
+    ],
+    featured: true,
+    content: `
+*How a 30-day traffic census, one insight about our stack, and a free Cloudflare custom rule deleted an entire species of bot traffic.*
+
+## The census
+
+We run 12 domains through Cloudflare. Last month's numbers:
+
+- **458,735** total requests
+- **263,477** of them 4xx — **57.2%**
+- **83** human visitors (measured at the origin, where it counts)
+
+Read that again. Over half of everything hitting our infrastructure was something asking for a thing that doesn't exist. Not mistyped URLs. Not old bookmarks. The top of the 404 charts:
+
+| Probe | Hits (30d) |
+|---|---|
+| \`/.env\` (all variants) | ~2,900 |
+| \`/wp-admin/install.php\` | 2,273 |
+| \`/.git/config\` | 921 |
+| \`/wp-login.php\` | 356 |
+| \`/xmlrpc.php\` | 88 |
+
+That's not traffic. That's a botnet doing inventory — WordPress exploit scanners, Laravel \`.env\` hunters, phpMyAdmin probers, working through every domain we own looking for a way in.
+
+## The insight
+
+Here's the thing: **we serve zero PHP.**
+
+Not "we don't run WordPress." Zero. Our entire stack is Next.js on Vercel and static frontends. There is no PHP interpreter anywhere in our infrastructure. There never has been. There never will be.
+
+Which means every single request containing \`.php\` is, by definition, hostile. Not suspicious. Not "probably a bot." *Definitionally* hostile — no legitimate client will ever ask our servers for a PHP file, because no PHP file has ever existed there.
+
+Same logic extends to the whole exploit-scanner vocabulary: \`/.env\`, \`/.git/\`, \`/.aws/\`, \`wp-\`, \`xmlrpc\`, \`phpmyadmin\`, \`adminer\`, \`filemanager\`, \`/actuator\`, \`server-status\`, \`.ds_store\`, HTTP/1.0. None of these exist in our world. Every hit is a scanner announcing itself.
+
+Most WAF advice tells you to buy the managed ruleset ($20/month/zone on Cloudflare Pro) and tune false positives for weeks. We did the opposite: instead of learning what attacks look like, we wrote down what *we* look like — and blocked everything outside it. When your stack's negative space is this clean, allowlisting by absence is a one-liner.
+
+## The rule
+
+One custom rule. All 12 zones. Cloudflare's free plan includes 5 custom rules per zone, so the total cost was **$0**:
+
+\`\`\`
+(lower(http.request.uri.path) contains ".php") or
+(lower(http.request.uri.path) contains "/.env") or
+(lower(http.request.uri.path) contains "/.git/") or
+(lower(http.request.uri.path) contains "/.svn/") or
+(lower(http.request.uri.path) contains "/.hg/") or
+(lower(http.request.uri.path) contains "/.aws/") or
+(lower(http.request.uri.path) contains "wp-") or
+(lower(http.request.uri.path) contains "xmlrpc") or
+(lower(http.request.uri.path) contains "phpmyadmin") or
+(lower(http.request.uri.path) contains "adminer") or
+(lower(http.request.uri.path) contains "filemanager") or
+(lower(http.request.uri.path) contains "/actuator") or
+(lower(http.request.uri.path) contains "server-status") or
+(lower(http.request.uri.path) contains ".ds_store") or
+(http.request.version eq "1.0")
+\`\`\`
+
+Action: Block. Deployed in about 20 minutes, most of which was clicking through 12 zones.
+
+A few deliberate choices in there:
+
+- **Blanket \`.php\`, not specific filenames.** We don't need to enumerate \`wp-login.php\` vs \`shell.php\` vs \`alfa.php\`. The extension itself is the signal.
+- **\`/.env\` as a substring, not an exact path.** Catches \`/.env\`, \`/.env.local\`, \`/.env.production\`, \`/.env.development\` in one clause.
+- **\`/robots.txt\` deliberately excluded.** Legitimate crawlers read it. Blocking it would be security theater that annoys the good bots.
+- **\`/login\` deliberately excluded.** That's our real login page. The rule targets exploit vocabulary, not English words.
+- **\`/.well-known/\` deliberately excluded.** That's where SSL renewals live. Never block your own certificate renewals.
+- **HTTP/1.0 blocked.** No legitimate client has spoken HTTP/1.0 in a decade. It's scanner fingerprinting.
+
+## The result
+
+Within hours of deployment: **960 requests blocked by the custom rule** — a counter that read zero that morning. Total threats mitigated doubled from 510 to 1,059 per day. The probe table tells the story in status codes: \`/.env\` and \`/.git/config\` now return **403** (killed at the edge, never touching our servers) where they used to return 404 (reaching origin and wasting a function invocation).
+
+And the false-positive count: **zero.** 2xx share actually went *up*. Human traffic untouched. When you block things that provably don't exist, there's nothing legitimate to catch.
+
+## The lesson
+
+Everyone tells you bot mitigation is a cat-and-mouse game — ML models, behavioral analysis, managed rulesets, tuning. Sometimes it is. But sometimes the mouse is running into a wall you've already built, and all you have to do is notice.
+
+Know your stack's negative space. Write down what you provably never serve. Block it at the edge in one rule. Go back to building.
+
+---
+
+*TehWiz Productions — we build for the humans. The robots can talk to the firewall.*
+`
+  },
+  {
     id: 'alchememe-sunset-postmortem',
     slug: 'alchememe-sunset-postmortem',
     title: 'Sunset Twice: How Google and My AI Assistant Killed My Startup',
@@ -250,11 +359,16 @@ export function getTagCounts(): { tag: string; count: number }[] {
 }
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
-  // Support both current slug and legacy hello-world redirect alias
+  // Support both current slug and legacy/convenience redirect aliases
   return BLOG_POSTS.find(
     (post) =>
       post.slug === slug ||
       post.id === slug ||
-      (slug === 'hello-world' && post.id === 'it-started-with-goombas')
+      (slug === 'hello-world' && post.id === 'it-started-with-goombas') ||
+      (post.id === 'blocking-the-skiddies-cloudflare-waf' &&
+        (slug === 'blocking-the-skiddies' ||
+          slug === '600000-robots-1-human' ||
+          slug === '600k-robots-1-human' ||
+          slug === 'blocking-the-skiddies-with-a-single-cloudflare-waf-rule'))
   );
 }

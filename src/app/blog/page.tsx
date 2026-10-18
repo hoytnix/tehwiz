@@ -20,14 +20,23 @@ export const metadata: Metadata = {
       'Zero-to-App-Store architectural journals, sovereign edge AI deep dives, and WebGPU graphics engine systems by Michael Scott Hoyt.',
     url: `${SITE_CONFIG.url}/blog`,
     type: 'website',
-    siteName: SITE_CONFIG.name
+    siteName: SITE_CONFIG.name,
+    images: [
+      {
+        url: SITE_CONFIG.coverImage,
+        width: 1200,
+        height: 630,
+        alt: `${SITE_CONFIG.name} Engineering Blog`
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
     title: `Engineering Blog // ${SITE_CONFIG.name}`,
     description:
       'Deep architectural writeups, on-device AI models, WebGPU pipelines, and sovereign systems design.',
-    creator: SITE_CONFIG.handle
+    creator: SITE_CONFIG.handle,
+    images: [SITE_CONFIG.coverImage]
   },
   alternates: {
     canonical: `${SITE_CONFIG.url}/blog`,

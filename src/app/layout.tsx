@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google';
 import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/react';
 import { Shell } from '@/components/layout/Shell';
+import { RootJsonLd } from '@/components/seo/JsonLd';
 import { SITE_CONFIG } from '@/config/site';
 import './globals.css';
 
@@ -36,19 +37,32 @@ export const metadata: Metadata = {
   keywords: SITE_CONFIG.keywords,
   authors: [{ name: SITE_CONFIG.author, url: SITE_CONFIG.github }],
   creator: SITE_CONFIG.author,
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/icon.png'
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: SITE_CONFIG.url,
     title: SITE_CONFIG.title,
     description: SITE_CONFIG.description,
-    siteName: SITE_CONFIG.name
+    siteName: SITE_CONFIG.name,
+    images: [
+      {
+        url: SITE_CONFIG.coverImage,
+        width: 1200,
+        height: 630,
+        alt: `${SITE_CONFIG.name} // Sovereign Edge AI & WebGPU Systems`
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
     title: SITE_CONFIG.title,
     description: SITE_CONFIG.description,
-    creator: SITE_CONFIG.handle
+    creator: SITE_CONFIG.handle,
+    images: [SITE_CONFIG.coverImage]
   }
 };
 
@@ -72,6 +86,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-void text-slate-100 antialiased overflow-hidden selection:bg-indigo-500/30 selection:text-white">
+        <RootJsonLd />
         <Shell>
           {children}
         </Shell>

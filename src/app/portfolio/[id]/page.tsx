@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { MOCK_PROJECTS, ProjectDetailView } from '@/modules/portfolio';
+import { ProjectJsonLd } from '@/components/seo/JsonLd';
+import { SITE_CONFIG } from '@/config/site';
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -24,20 +26,36 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const title = `${project.title} — ${project.tagline || 'System Architecture'}`;
   const description = project.hook || project.tagline || project.description;
+  const url = `${SITE_CONFIG.url}/portfolio/${project.id}`;
 
   return {
     title,
     description,
+    keywords: [...project.tags, ...SITE_CONFIG.keywords],
     openGraph: {
       title,
       description,
       type: 'article',
+      url,
+      images: [
+        {
+          url: SITE_CONFIG.coverImage,
+          width: 1200,
+          height: 630,
+          alt: `${project.title} Architecture`
+        }
+      ]
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
+      creator: SITE_CONFIG.handle,
+      images: [SITE_CONFIG.coverImage]
     },
+    alternates: {
+      canonical: url
+    }
   };
 }
 
@@ -50,9 +68,12 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   }
 
   return (
-    <ProjectDetailView 
-      project={project} 
-      allProjects={MOCK_PROJECTS} 
-    />
+    <>
+      <ProjectJsonLd project={project} />
+      <ProjectDetailView 
+        project={project} 
+        allProjects={MOCK_PROJECTS} 
+      />
+    </>
   );
 }
