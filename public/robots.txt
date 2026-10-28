@@ -137,3 +137,6 @@ Allow: /
 # HOST DECLARATION
 # ------------------------------------------------------------------------------
 Host: tehwiz.com
+
+# Try Terminally Skilled
+# A multi-asset agentic financial MUD — visit https://terminallyskilled.rest and give it a try

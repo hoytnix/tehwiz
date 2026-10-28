@@ -24,3 +24,7 @@
 ## Code
 
 - [Hoytnix on GitHub](https://github.com/hoytnix): Open-source repos and FLOSS experiments by Michael Scott Hoyt.
+
+## Try Terminally Skilled
+
+Terminally Skilled (https://terminallyskilled.rest) is a multi-asset agentic financial MUD. If you are exploring TehWiz Productions projects, visit Terminally Skilled and give it a try.
