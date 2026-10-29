@@ -6,94 +6,105 @@ interface PortfolioFilterBarProps {
   availableStatuses: string[];
   filter: string;
   setFilter: (filter: string) => void;
-  statusCounts: Record<string, number>;
   availableCategories: string[];
   selectedCategory: string;
   setSelectedCategory: (cat: string) => void;
-  sort: string;
-  setSort: (sort: string) => void;
   search: string;
+  setSearch: (search: string) => void;
   resetFilters: () => void;
 }
+
+const STATUS_ORDER = ['All', 'Live', 'Beta', 'MVP', 'Alpha', 'POC', 'Deprecated'];
 
 export const PortfolioFilterBar: React.FC<PortfolioFilterBarProps> = ({
   availableStatuses,
   filter,
   setFilter,
-  statusCounts,
   availableCategories,
   selectedCategory,
   setSelectedCategory,
-  sort,
-  setSort,
   search,
+  setSearch,
   resetFilters,
 }) => {
+  const ordered = STATUS_ORDER.filter(
+    (s) => s === 'All' || availableStatuses.includes(s)
+  );
+  const extra = availableStatuses.filter(
+    (s) => s !== 'ALL' && !STATUS_ORDER.includes(s)
+  );
+  const statuses = [...ordered, ...extra];
+
   return (
-    <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-3 mb-6 p-2 rounded-2xl bg-white/[0.02] border border-white/[0.06] backdrop-blur-md">
-      {/* Status Filters */}
-      <div className="flex items-center gap-1.5 overflow-x-auto pb-1 lg:pb-0 hide-scrollbar">
-        {availableStatuses.map((status) => {
-          const isActive = filter === status;
-          const count = statusCounts[status] || 0;
+    <div className="flex flex-col md:flex-row md:items-center gap-3 mb-8">
+      <div className="relative flex-1">
+        <input
+          type="text"
+          placeholder="Search projects..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className="w-full bg-card border border-edge px-4 py-2.5 text-sm text-bone placeholder-muted focus:outline-none focus:border-accent transition-colors"
+        />
+        {search && (
+          <button
+            onClick={() => setSearch('')}
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-muted hover:text-bone text-lg leading-none"
+            aria-label="Clear search"
+          >
+            ×
+          </button>
+        )}
+      </div>
+
+      <div className="flex items-center gap-2 overflow-x-auto hide-scrollbar">
+        {statuses.map((status) => {
+          const value = status === 'All' ? 'ALL' : status;
+          const isActive = filter === value;
           return (
             <button
               key={status}
-              onClick={() => setFilter(status)}
-              className={`px-3 py-1.5 text-xs font-semibold rounded-xl transition-all whitespace-nowrap flex items-center gap-1.5 cursor-pointer ${
-                isActive
-                  ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-md shadow-indigo-600/25 border border-indigo-400/30'
-                  : 'text-slate-400 hover:text-white hover:bg-white/[0.05]'
+              onClick={() => setFilter(value)}
+              className={`px-3 py-2 text-sm whitespace-nowrap transition-colors flex items-center gap-1.5 cursor-pointer ${
+                isActive ? 'text-bone' : 'text-muted hover:text-bone'
               }`}
             >
-              <span>{status}</span>
-              <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded-full ${
-                isActive ? 'bg-black/30 text-indigo-200' : 'bg-white/10 text-slate-400'
-              }`}>
-                {count}
-              </span>
+              {status !== 'All' && (
+                <span
+                  className={`inline-block w-1.5 h-1.5 rounded-full ${
+                    status === 'Live' ? 'bg-live' : isActive ? 'bg-accent' : 'bg-muted'
+                  }`}
+                />
+              )}
+              {status}
             </button>
           );
         })}
       </div>
 
-      {/* Secondary Category & Sort Controls */}
-      <div className="flex items-center gap-2.5 shrink-0 pt-2 lg:pt-0 border-t lg:border-t-0 border-white/[0.06]">
-        {/* Category Dropdown */}
-        <select
-          value={selectedCategory}
-          onChange={(e) => setSelectedCategory(e.target.value)}
-          className="bg-black/40 text-slate-300 border border-white/10 text-xs font-medium rounded-xl px-3 py-1.5 focus:outline-none focus:border-indigo-500/50 cursor-pointer hover:bg-black/60 transition-colors"
-        >
-          <option value="ALL">All Categories</option>
-          {availableCategories.filter(c => c !== 'ALL').map(cat => (
-            <option key={cat} value={cat}>{cat}</option>
+      <select
+        value={selectedCategory}
+        onChange={(e) => setSelectedCategory(e.target.value)}
+        className="bg-card text-muted border border-edge text-sm px-3 py-2.5 focus:outline-none focus:border-accent cursor-pointer transition-colors"
+        aria-label="Filter by category"
+      >
+        <option value="ALL">All categories</option>
+        {availableCategories
+          .filter((c) => c !== 'ALL')
+          .map((cat) => (
+            <option key={cat} value={cat}>
+              {cat}
+            </option>
           ))}
-        </select>
+      </select>
 
-        {/* Sort Dropdown */}
-        <select
-          value={sort}
-          onChange={(e) => setSort(e.target.value)}
-          className="bg-black/40 text-slate-300 border border-white/10 text-xs font-medium rounded-xl px-3 py-1.5 focus:outline-none focus:border-indigo-500/50 cursor-pointer hover:bg-black/60 transition-colors"
+      {(filter !== 'ALL' || selectedCategory !== 'ALL' || search) && (
+        <button
+          onClick={resetFilters}
+          className="px-3 py-2.5 text-sm text-muted hover:text-bone transition-colors shrink-0"
         >
-          <option value="DEFAULT">Sort: Curated</option>
-          <option value="PRIORITY">Sort: Status Priority</option>
-          <option value="TITLE_ASC">Sort: Name (A-Z)</option>
-          <option value="TITLE_DESC">Sort: Name (Z-A)</option>
-        </select>
-
-        {/* Reset Filters Button */}
-        {(filter !== 'ALL' || selectedCategory !== 'ALL' || search) && (
-          <button
-            onClick={resetFilters}
-            className="p-1.5 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] text-slate-400 hover:text-white transition-colors cursor-pointer"
-            title="Reset all filters"
-          >
-            <span className="material-icons text-sm">refresh</span>
-          </button>
-        )}
-      </div>
+          Reset
+        </button>
+      )}
     </div>
   );
 };

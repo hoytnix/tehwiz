@@ -43,7 +43,7 @@ export default function NotFound() {
           icon="layers"
           href="/portfolio"
         >
-          Browse 15 Systems
+          Browse projects
         </CyberButton>
       </div>
     </div>

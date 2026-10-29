@@ -27,6 +27,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const title = `${project.title} — ${project.tagline || 'System Architecture'}`;
   const description = project.hook || project.tagline || project.description;
   const url = `${SITE_CONFIG.url}/portfolio/${project.id}`;
+  const coverImage = project.coverImage || SITE_CONFIG.coverImage;
 
   return {
     title,
@@ -39,9 +40,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       url,
       images: [
         {
-          url: SITE_CONFIG.coverImage,
-          width: 1200,
-          height: 630,
+          url: coverImage,
           alt: `${project.title} Architecture`
         }
       ]
@@ -51,7 +50,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title,
       description,
       creator: SITE_CONFIG.handle,
-      images: [SITE_CONFIG.coverImage]
+      images: [coverImage]
     },
     alternates: {
       canonical: url

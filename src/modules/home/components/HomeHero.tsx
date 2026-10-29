@@ -1,63 +1,90 @@
 import React from 'react';
-import { CyberButton } from '@/components/ui/CyberButton';
+import Link from 'next/link';
+
+/**
+ * Yuli cognitive-console artifact. A composed static panel standing in for a
+ * live product screenshot: four deliberation states, a thought firewall, and
+ * throughput telemetry. Substitute until a real capture ships.
+ */
+const YuliArtifact: React.FC = () => {
+  const minds = [
+    { name: 'Ego', code: '0EE', note: 'Radiant explorer' },
+    { name: 'Shadow', code: '1E6', note: 'Mystical introspector' },
+    { name: 'Subconscious', code: '2E7', note: 'Oracle anchor' },
+    { name: 'Superego', code: '3E1', note: 'Precision sovereign' },
+  ];
+
+  return (
+    <div className="w-full bg-card border border-edge">
+      <div className="flex items-center justify-between px-5 py-3 border-b border-edge">
+        <span className="text-sm text-bone">Yuli — cognitive console</span>
+        <span className="inline-flex items-center gap-1.5 text-xs text-muted">
+          <span className="inline-block w-1.5 h-1.5 rounded-full bg-live" />
+          Live
+        </span>
+      </div>
+      <div className="p-5 flex flex-col gap-4">
+        <div className="grid grid-cols-2 gap-px bg-edge border border-edge">
+          {minds.map((m) => (
+            <div key={m.code} className="bg-card p-4">
+              <div className="font-mono text-xs text-accent">{m.code}</div>
+              <div className="text-sm text-bone mt-1">{m.name}</div>
+              <div className="text-xs text-muted">{m.note}</div>
+            </div>
+          ))}
+        </div>
+        <div className="border border-edge p-4">
+          <div className="font-mono text-xs text-muted mb-2">deliberation firewall</div>
+          <p className="font-mono text-xs text-bone leading-relaxed">
+            &lt;thought&gt; private reflection, stripped before reply &lt;/thought&gt;
+          </p>
+          <p className="text-sm text-bone mt-2">
+            “Reading personality patterns, on-device, in real time.”
+          </p>
+        </div>
+        <div className="flex items-center justify-between font-mono text-xs text-muted">
+          <span>70–110 TPS · WebGPU</span>
+          <span>TTFT &lt; 200ms</span>
+          <span>$0.00 / token</span>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export const HomeHero: React.FC = () => {
   return (
-    <div className="flex flex-col items-center text-center relative pt-4">
-      {/* Top Eyebrow Badge */}
-      <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-mono font-semibold mb-6 shadow-sm backdrop-blur-md">
-        <span className="relative flex h-2 w-2">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
-        </span>
-        <span>SOVEREIGN EDGE AI • COGNITIVE ARCHITECTURES • COMPUTER VISION</span>
+    <section className="pt-12 sm:pt-20 pb-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+        <div>
+          <p className="text-sm text-muted mb-5">
+            TehWiz Productions — Michael Scott Hoyt, since 2009.
+          </p>
+          <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.02] text-bone mb-6">
+            Machines that feel alive.
+          </h1>
+          <p className="text-base sm:text-lg max-w-xl mb-8">
+            TehWiz Productions ships sovereign, on-device systems — cognitive
+            engines, games, and agent infrastructure that run entirely on your
+            hardware. No cloud bills, no telemetry, no permission slips.
+          </p>
+          <div className="flex flex-wrap items-center gap-3">
+            <Link
+              href="/portfolio"
+              className="py-3 px-6 text-base font-medium bg-accent text-ink hover:opacity-90 transition-colors"
+            >
+              Browse projects
+            </Link>
+            <Link
+              href="/vlog"
+              className="py-3 px-6 text-base font-medium text-bone border border-edge hover:border-accent transition-colors"
+            >
+              Watch a build
+            </Link>
+          </div>
+        </div>
+        <YuliArtifact />
       </div>
-
-      {/* Main Headline */}
-      <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-[1.1] max-w-4xl">
-        Hacking FLOSS &{' '}
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300">
-          Coding With Prose
-        </span>{' '}
-        Since 2009.
-      </h1>
-
-      {/* Subtitle */}
-      <p className="text-slate-300 text-base sm:text-lg lg:text-xl font-normal max-w-3xl leading-relaxed mb-8">
-        <strong className="text-white font-semibold">TehWiz Productions</strong> by{' '}
-        <span className="text-indigo-300 font-semibold">Michael Scott Hoyt</span>. At age 5, Michael asked his uncle how Mario&apos;s Goombas move. His uncle replied: <em className="text-indigo-200 not-italic font-medium">&ldquo;That&apos;s AI.&rdquo;</em> That spark ignited a lifelong quest—from childhood obsession to an AI Master&apos;s degree and building on-device cognitive engines like Yuli and AI NPC SDKs for games. The through-line of everything TehWiz crafts: <span className="text-white font-semibold">teaching machines to feel alive</span>. It all started with Goombas.
-      </p>
-
-      {/* Quick CTA Actions */}
-      <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
-        <CyberButton
-          variant="primary"
-          size="lg"
-          icon="layers"
-          href="/portfolio"
-          className="shadow-indigo-500/30 shadow-xl"
-        >
-          Explore 15 Production Projects
-        </CyberButton>
-
-        <CyberButton
-          variant="secondary"
-          size="lg"
-          icon="terminal"
-          href="/prompts"
-        >
-          Prompt Engineering Vault
-        </CyberButton>
-
-        <CyberButton
-          variant="outline"
-          size="lg"
-          icon="smart_display"
-          href="/vlog"
-        >
-          Engineering Vlogs
-        </CyberButton>
-      </div>
-    </div>
+    </section>
   );
 };

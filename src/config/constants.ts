@@ -1,6 +1,6 @@
 export const SYSTEM_NAME = "TehWiz";
 export const APP_VERSION = "V3";
-export const TOTAL_PROJECTS = 15;
+export const TOTAL_PROJECTS = 19;
 
 export const DEFAULT_SYSTEM_INSTRUCTION = `
 You are Archie, the world's foremost WebDev expert.

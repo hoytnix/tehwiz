@@ -1,6 +1,7 @@
 import React from 'react';
 import { SITE_CONFIG } from '@/config/site';
 import { Project, VlogEntry, PromptItem } from '@/types';
+import { getProjectCoverImage } from '@/modules/portfolio/utils/projectMedia';
 
 // Helper to ensure full absolute URL
 export function getFullUrl(pathOrUrl?: string): string {
@@ -250,8 +251,8 @@ export const PortfolioCatalogJsonLd: React.FC<{ projects: Project[] }> = ({ proj
         '@type': 'CollectionPage',
         '@id': `${SITE_CONFIG.url}/portfolio#collection`,
         url: `${SITE_CONFIG.url}/portfolio`,
-        name: 'Systems Directory // 15 Production Projects',
-        description: '15 sovereign AI systems, edge-native engines, computer-vision scanners, and Web3 apps developed by Michael Scott Hoyt.',
+        name: 'Systems Directory // 19 Production Projects',
+        description: '19 sovereign systems, edge-native engines, games, security tools, and agent infrastructure developed by Michael Scott Hoyt.',
         inLanguage: 'en-US',
         isPartOf: {
           '@id': `${SITE_CONFIG.url}/#website`
@@ -275,7 +276,7 @@ export const PortfolioCatalogJsonLd: React.FC<{ projects: Project[] }> = ({ proj
               url: `${SITE_CONFIG.url}/portfolio/${project.id}`,
               applicationCategory: mapAppCategory(project.category),
               operatingSystem: 'WebGPU, WebGL, Modern Web Browsers, Cross-Platform',
-              image: `${SITE_CONFIG.url}${SITE_CONFIG.coverImage}`,
+              image: getProjectCoverImage(project),
               author: {
                 '@id': `${SITE_CONFIG.url}/#person`
               }
@@ -343,9 +344,7 @@ export const ProjectJsonLd: React.FC<{ project: Project }> = ({ project }) => {
         operatingSystem: 'WebGPU, WebGL, Modern Web Browsers, Cross-Platform',
         image: {
           '@type': 'ImageObject',
-          url: `${SITE_CONFIG.url}${SITE_CONFIG.coverImage}`,
-          width: 1200,
-          height: 630
+          url: getProjectCoverImage(project)
         },
         inLanguage: 'en-US',
         keywords: project.tags.join(', '),

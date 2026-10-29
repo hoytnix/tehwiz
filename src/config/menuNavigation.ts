@@ -43,11 +43,11 @@ export const MENU_SECTIONS: NavSection[] = [
       {
         id: 'portfolio',
         title: 'Engineering Projects',
-        subtitle: '15 Sovereign Systems',
-        description: 'Production catalog of sovereign on-device AI engines, WebGPU apps, diagnostic tools, and Web3 systems.',
+        subtitle: 'Sovereign Systems',
+        description: 'Production catalog of sovereign on-device AI engines, WebGPU apps, diagnostic tools, games, and agent infrastructure.',
         href: '/portfolio',
         icon: 'layers',
-        badge: '15 Systems',
+        badge: 'Catalog',
         badgeColor: 'bg-purple-500/20 text-purple-300 border-purple-500/30'
       },
       {
@@ -89,14 +89,14 @@ export const MENU_SECTIONS: NavSection[] = [
     icon: 'rocket_launch',
     accentColor: 'purple',
     viewAllHref: '/portfolio',
-    viewAllLabel: 'View All 15 Projects',
+    viewAllLabel: 'View all projects',
     items: [
       {
         id: 'yuli-live',
         title: 'Yuli Cognitive Engine',
         subtitle: 'F_2^4 Hypercube Cognitive Model',
         description: 'Live autonomous cognitive companion running on WebGPU with real-time Myers-Briggs (MBTI) detection.',
-        href: 'https://project-yuli.netlify.app/',
+        href: 'https://yuli.tehwiz.com',
         isExternal: true,
         icon: 'psychology',
         badge: 'WebGPU 110 TPS',
@@ -105,9 +105,9 @@ export const MENU_SECTIONS: NavSection[] = [
       {
         id: 'purple-canary-live',
         title: 'Purple Canary',
-        subtitle: 'CO Poisoning Diagnostic Scanner',
-        description: 'Objective computer vision diagnostic tool detecting cherry-red skin oxygenation shifts in emergency triage.',
-        href: 'https://purple-canary.netlify.app/',
+        subtitle: 'Forensic Reagent Analysis Scanner',
+        description: 'Objective computer vision forensic scanner detecting adulterants in substances with ambient-lighting compensation.',
+        href: 'https://purplecanarylab.com',
         isExternal: true,
         icon: 'medical_services',
         badge: 'Zero-Telemetry',

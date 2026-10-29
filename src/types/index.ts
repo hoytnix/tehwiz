@@ -45,9 +45,18 @@ export interface ProjectSpec {
   value: string;
 }
 
+export interface ProjectRedirect {
+  to: string;
+  note: string;
+}
+
 export interface Project {
   id: string;
   title: string;
+  /** Absolute URL of the live app's own cover art (its JSON-LD image / og:image). */
+  coverImage?: string;
+  /** Absolute URL (or data URI) of the live app's own favicon / icon. */
+  favicon?: string;
   tagline: string;
   description: string;
   category: string;
@@ -55,7 +64,8 @@ export interface Project {
   links: ProjectLinks;
   license: ProjectLicense;
   pricing: PricingTier[];
-  status: 'LIVE' | 'ARCHIVED' | 'CLASSIFIED' | 'ALPHA' | 'BETA' | 'PRE-ALPHA' | 'POC' | 'MVP' | 'Deprecated' | 'DEPRECATED';
+  status: 'Live' | 'Beta' | 'MVP' | 'Alpha' | 'POC' | 'Deprecated';
+  redirect?: ProjectRedirect;
   url?: string;
   githubUrl?: string;
   featured?: boolean;

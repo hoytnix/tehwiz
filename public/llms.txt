@@ -1,21 +1,36 @@
 # TehWiz Productions
 
-> Sovereign edge AI, cognitive architecture, and computer vision lab founded by Michael Scott Hoyt. On-device AI companions, game engines, and developer tooling. © 2026 ISICECAKEOISIS INC.
+> Sovereign edge AI, cognitive architecture, games, security, and agent infrastructure lab founded by Michael Scott Hoyt. On-device AI companions, game engines, and developer tooling. © 2026 ISICECAKEOISIS INC.
 
 ## Flagship: Yuli
 
 - [Yuli Engine Architecture](https://tehwiz.com/portfolio/yuli): Autonomous cognitive persona engine running on an F₂⁴ Boolean hypercube state space; real-time MBTI personality-pattern detection; 70–110 TPS on mobile WebGPU with sub-200ms time-to-first-token. BSL 1.1 licensed.
-- [Yuli Web App](https://project-yuli.netlify.app/): In-browser WebGPU live beta.
+- [Yuli Web App](https://yuli.tehwiz.com/): In-browser WebGPU live beta (canonical launch).
 
 ## Games
 
 - [Ramen Nights & Budget Bites](https://tehwiz.com/portfolio/ramen-nights): Tokyo University economics capstone — build a ramen franchise across five Tokyo districts. Zero-dependency HTML5 Canvas with Web Audio chiptunes.
 - [Ramen Nights on Itch.io](https://tehwiz.itch.io/ramen-nights-and-budget-bites): Free download ($1 recommended donation).
-- [Ramen Nights Web Beta](https://ramen.tehwiz.com/): Playable in-browser beta.
+- [F.U.N.](https://tehwiz.com/portfolio/fun): 4-player trick-taking card game with solitaire speed-race finale. 100% client-side. Play at https://fun.tehwiz.com
+- [Realm Raiders](https://tehwiz.com/portfolio/raiders): Asymmetric fantasy realm management on living parchment; async PvP catapult sieges. Play at https://raiders.tehwiz.com
+- [Bleep](https://tehwiz.com/portfolio/bleep): Mechanical stepper slot simulation in React 19 + Pixi.js v8. MIT licensed. Play at https://bleep.tehwiz.com
+
+## Security & Infrastructure
+
+- [KISS AV](https://tehwiz.com/portfolio/kissav): Obfuscated Rust AFK security daemon with native network killswitch. GPL v3. Live at https://kissav.tehwiz.com
+- [Terminally Skilled](https://tehwiz.com/portfolio/terminally-skilled): Multi-asset agentic financial MUD over MCP + REST; Season 1 live. Live at https://terminallyskilled.rest
+- [Purple Canary](https://tehwiz.com/portfolio/purple-canary): Forensic substance screening suite. Companion e-book at https://book.purplecanarylab.com
+- [ISICECAKEOISIS](https://tehwiz.com/portfolio/isicecakeoisis): Corporate holding — Business-to-Agent systems architecture. Live at https://isicecakeoisis.com
+
+## Redirects
+
+- [Tricks Wiki](https://tehwiz.com/portfolio/tricks-wiki): tricks.wiki now 301-redirects to tehwiz.com. Redirect pointer, no external launch.
+- [Alchememe](https://tehwiz.com/blog/alchememe-sunset-postmortem): alchememe.com now redirects to the sunset postmortem.
+- [Cherry SunDays](https://tehwiz.com/portfolio/cherry-sundays): cherrysundays.com now redirects to tehwiz.com.
 
 ## Workstation
 
-- [Portfolio](https://tehwiz.com/portfolio): Catalog of 14+ production deployments, including the Purple Canary harm-reduction scanner.
+- [Portfolio](https://tehwiz.com/portfolio): Catalog of 19 production deployments.
 - [Prompt Vault](https://tehwiz.com/prompts): System instructions, cognitive loops, and expert personas.
 - [Blog](https://tehwiz.com/blog): Technical essays on edge AI, PyTorch, and WebGPU.
 - [Vlog](https://tehwiz.com/vlog): Build logs and App Store journals.

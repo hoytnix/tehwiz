@@ -8,15 +8,17 @@ export const MOCK_PROJECTS: Project[] = [
         description: 'Born from a childhood obsession that started at age 5 when founder Michael asked how Mario\'s Goombas move, Yuli represents the core mission of TehWiz: teaching machines to feel alive. A sovereign, 100% on-device cognitive persona engine running on an 𝔽₂⁴ Boolean Hypercube state space, Yuli was fine-tuned on high-friction multi-turn discourse from Reddit to detect human Myers-Briggs (MBTI) cognitive personality types in real time. Because understanding personality patterns is the key to characters—and machines—that truly feel alive, Yuli delivers fluid character dialogue at 70–110 TPS on WebGPU with sub-200ms time-to-first-token on modern mobile devices, serving as a foundational stepping stone toward our upcoming AI NPC SDK for games.',
         category: 'AI & Cognitive Architecture',
         tags: ['AI', 'MBTI', 'Cognitive Architecture', 'WebGPU', 'Edge AI', 'Reddit', 'Game AI'],
-        status: 'BETA',
-        url: 'https://project-yuli.netlify.app/',
+        status: 'Beta',
+        url: 'https://yuli.tehwiz.com',
+        coverImage: 'https://yuli.tehwiz.com/icon-512.png',
+        favicon: 'https://yuli.tehwiz.com/icon.svg',
         hook: 'Teaching machines to feel alive: the edge-native cognitive companion that reads personality patterns in real time.',
         agitation: 'Tired of cloud LLMs charging you per token just to deliver watered-down, sycophantic corporate fluff that buffers your UI loop and breaks character immersion?',
         enemyFriction: 'Modern AI conversational agents are paralyzed by corporate sycophancy, repetitive pleasantries ("I hope this helps!"), high cloud latency (1.5 to 3.5 seconds), and compounding monthly API token bills. In gaming and mobile apps, remote LLMs frequently cause frame stutter, fail offline, and leak internal character reasoning directly into user dialogue bubbles—shattering the illusion of a living character.',
         uniqueMechanism: 'A sovereign, 100% on-device cognitive persona engine running on an 𝔽₂⁴ Boolean Hypercube state space. Fine-tuned on high-friction multi-turn discourse to detect human Myers-Briggs (MBTI) cognitive personality types in real time, Yuli switches between four operational minds (Ego 0EE, Shadow 1E6, Subconscious 2E7, Superego 3E1) using bitwise XOR operations. An inline Pushdown Automaton (CCDStreamParser) enforces a strict Cognitive Deliberation Firewall, stripping raw thought tokens into a private background stream while delivering natural character dialogue at 70–110 TPS on WebGPU with sub-200ms time-to-first-token.',
         transformation: 'Developers and game studios embed sovereign, personality-aware NPCs and cognitive companions directly into browsers, WebGL worlds, and game engines (with Unreal & Unity SDK plugins on the roadmap) that run entirely offline without recurring cloud bills—bringing interactive characters to life.',
         links: {
-            liveUrl: 'https://project-yuli.netlify.app/',
+            liveUrl: 'https://yuli.tehwiz.com',
             githubUrls: [
                 { label: 'Yuli-E2B-Reddit', url: 'https://github.com/hoytnix/Yuli-E2B-Reddit' },
                 { label: 'Yuli-Web', url: 'https://github.com/hoytnix/Yuli-Web' }
@@ -73,7 +75,7 @@ export const MOCK_PROJECTS: Project[] = [
         description: 'A mobile computer-vision scanner running local colorimetry calibration and ambient lighting compensation. Analyzes colorimetric reagent reactions to detect over 200+ toxins and adulterants in illicit substances with mathematical certainty.',
         category: 'Harm Reduction & Computer Vision',
         tags: ['Computer Vision', 'Harm Reduction', 'HealthTech', 'WASM', 'Mobile Web'],
-        status: 'BETA',
+        status: 'Beta',
         url: 'https://purplecanarylab.com',
         hook: 'Objective forensic reagent analysis right in your mobile browser.',
         agitation: 'Dim lighting and subjective color charts shouldn\'t be the difference between safety and a fatal overdose.',
@@ -130,8 +132,10 @@ export const MOCK_PROJECTS: Project[] = [
         description: 'An Online Reputation Management Firewall that bifurcates customer sentiment in real time at the point of sale. Countertop NFC tap cards and QR funnels route 4-to-5-star ratings to public profiles while intercepting negative feedback privately before hitting Google.',
         category: 'MarTech & Reputation Management',
         tags: ['SaaS', 'Reputation Firewall', 'Local SEO', 'Review Gateway', 'NFC Hardware'],
-        status: 'LIVE',
+        status: 'Live',
         url: 'https://aevloc.com',
+        coverImage: 'https://aevloc.com/images/aevloc-cover.png',
+        favicon: 'https://aevloc.com/favicon.svg',
         hook: 'Stop renting your reputation from $400/month software giants. Own your review firewall.',
         agitation: 'One unfair 1-star review undoes six months of positive word-of-mouth. Why are you sending your upset customers directly to Google?',
         enemyFriction: 'Small business owners are held hostage by $300 to $500 monthly software subscriptions from legacy players like Podium and Birdeye. Simultaneously, a single unvetted, emotionally reactive 1-star review on Google can crater a local business’s Map Pack ranking and burn thousands in monthly customer acquisition. The standard practice of blast-texting customers after they leave results in low response rates and public rants.',
@@ -188,6 +192,8 @@ export const MOCK_PROJECTS: Project[] = [
         tags: ['CRM', 'Canvassing', 'GIS Radar', 'Skiptracing', 'Offline-First', 'SolarGlide'],
         status: 'MVP',
         url: 'https://alembic.quest',
+        coverImage: 'https://alembic.quest/cover.png',
+        favicon: 'https://alembic.quest/favicon.ico',
         hook: 'The zero-latency, solar-guided canvassing operating system built for the pavement.',
         agitation: 'Every second you wait for a spinner to load on a doorstep is a second the homeowner thinks about shutting the door in your face.',
         enemyFriction: 'Door-to-door sales canvassers in solar, roofing, and home services are forced to rely on bloated enterprise CRMs that lock up in rural dead zones, drain device batteries, and slow reps down with spinning progress wheels on the homeowner\'s doorstep. Canvassers waste hours knocking cold facades during bad lighting with zero visibility into property ownership.',
@@ -245,6 +251,8 @@ export const MOCK_PROJECTS: Project[] = [
         tags: ['FLOSS', 'Local-First', 'WASM SQLite', 'OPFS', 'Multi-Agent', 'Zero-Cloud'],
         status: 'POC',
         url: 'https://quarkmeme.com',
+        coverImage: 'https://www.quarkmeme.com/og-cover.jpg',
+        favicon: 'https://www.quarkmeme.com/icon-512.png',
         hook: 'Fire your cloud database. The local-first, multi-agent operating system you own completely.',
         agitation: 'Why are you paying monthly database fees to a closed cloud vendor just to coordinate your own AI agent workflows?',
         enemyFriction: 'Proprietary multi-agent personal operating systems like Polsia lock your company hierarchies, specialized agent prompts, and operational memory banks inside centralized cloud servers with monthly recurring database fees and vendor lock-in.',
@@ -296,8 +304,10 @@ export const MOCK_PROJECTS: Project[] = [
         description: 'Deterministic in-browser WebAssembly computer vision that scans, grades, and values Pokémon cards at 1 card per second. Features a pre-indexed dataset spanning vintage Base Set through modern Scarlet & Violet, paired with an interactive virtual binder UI and high-speed auto-capture stand.',
         category: 'WASM Computer Vision & Collectibles',
         tags: ['WASM', 'Computer Vision', 'Card Grading', 'Pokémon', 'Digital Vault'],
-        status: 'LIVE',
+        status: 'Live',
         url: 'https://rarestry.com',
+        coverImage: 'https://rarestry.com/images/cover-8bit.jpg',
+        favicon: 'https://rarestry.com/favicon.svg',
         hook: 'Grade and vault your entire card collection at one card per second.',
         agitation: 'Why wait months and pay $20+ a slab to third-party grading services just to catalog your raw cards?',
         enemyFriction: 'High-volume trading card collectors and store owners spend countless hours manually searching, grading, and cataloging thousands of individual cards, while third-party grading submissions cost tens of dollars per card and take months.',
@@ -345,8 +355,10 @@ export const MOCK_PROJECTS: Project[] = [
         tagline: 'High-performance, local-first Markdown knowledge base & wiki',
         description: 'A sovereign personal knowledge management system modeled after Obsidian and Notion, powered by ProseMirror, Tiptap v2, IndexedDB, and the native File System Access API with bidirectional wiki-links and instant diff viewing.',
         category: 'Productivity',
-        status: 'LIVE',
+        status: 'Live',
         url: 'https://www.caffeinemd.wiki',
+        coverImage: 'https://www.caffeinemd.wiki/og-caffeinemd.png',
+        favicon: 'https://www.caffeinemd.wiki/icon-512.png',
         githubUrl: 'https://github.com/hoytnix/CaffeineMD',
         tags: ['Next.js', 'TipTap', 'Markdown', 'IndexedDB', 'PWA', 'Local-First'],
         featured: true,
@@ -396,34 +408,6 @@ export const MOCK_PROJECTS: Project[] = [
         architectureNotes: 'Engineered as a local-first sovereign knowledge base: zero telemetry, zero server databases, and complete data ownership through IndexedDB and browser-native File System Access API directory mounting.'
     },
     {
-        id: 'projects',
-        title: 'Projects',
-        tagline: 'Streamlined Project Management For The Chaotic Mind',
-        description: 'Free Trello Alternative. Streamlined Project Management For The Chaotic Mind. Fast card movement, backlog organization, and lightweight task pipelines.',
-        category: 'Productivity & Task Management',
-        tags: ['Kanban', 'Productivity', 'Task Management'],
-        status: 'Deprecated',
-        url: 'https://projects.tehwiz.com',
-        hook: 'Streamlined visual kanban engineered for fast-moving chaotic minds.',
-        agitation: 'Tired of heavyweight enterprise PM software that demands 20 clicks just to move a task card?',
-        links: {
-            liveUrl: 'https://projects.tehwiz.com'
-        },
-        license: {
-            name: 'Proprietary / Free Web App',
-            summary: 'Free web application for chaotic-mind productivity and personal workflow optimization.'
-        },
-        pricing: [
-            {
-                plan: 'Personal Workspaces',
-                price: 'FREE',
-                description: 'Unlimited personal boards and card pipelines.',
-                highlighted: true,
-                badge: 'Free'
-            }
-        ]
-    },
-    {
         id: 'cherry-sundays',
         title: 'Cherry SunDays',
         tagline: 'Custom Window Replacement POS & Field Estimator',
@@ -432,9 +416,11 @@ export const MOCK_PROJECTS: Project[] = [
         tags: ['Vertical SaaS', 'Window Replacement', 'POS', 'Contractors'],
         status: 'MVP',
         url: 'https://cherrysundays.com',
-        links: {
-            liveUrl: 'https://cherrysundays.com'
+        redirect: {
+            to: 'https://tehwiz.com',
+            note: 'cherrysundays.com now redirects to tehwiz.com — this is a redirect pointer, no external launch.'
         },
+        links: {},
         license: {
             name: 'Proprietary / Commercial SaaS',
             summary: 'Turnkey vertical SaaS for window replacement contractors and field estimators.'
@@ -455,7 +441,7 @@ export const MOCK_PROJECTS: Project[] = [
         description: 'A decentralized, privacy-first travel eSIM marketplace paired with the Ghost Guard non-KYC burner framework. Purchase instant eSIM data profiles for hundreds of global destinations using cryptocurrency with zero passport scans, zero roaming charges, and instant QR delivery.',
         category: 'Telecom & DePIN / Privacy',
         tags: ['eSIM', '5G', 'Crypto', 'Ghost Guard', 'Privacy', 'Travel'],
-        status: 'PRE-ALPHA',
+        status: 'Alpha',
         url: 'https://hibiscuswireless.com',
         hook: 'Anonymous global cellular data paid entirely in crypto. Zero roaming bills, zero KYC.',
         agitation: 'Why surrender your passport scans and submit to invasive biometric KYC just to get mobile data when you travel abroad?',
@@ -498,39 +484,16 @@ export const MOCK_PROJECTS: Project[] = [
         ]
     },
     {
-        id: 'snowmore-work',
-        title: 'SnowMore Work',
-        tagline: 'Snow Shoveling Pricing Calculator & Job Estimator',
-        description: 'Dynamic Snow Shoveling Pricing Calculator with precipitation rates, driveway dimensions, and instant bid sheets.',
-        category: 'Utilities & Estimators',
-        tags: ['Calculator', 'Home Services', 'Estimates'],
-        status: 'MVP',
-        url: 'https://snowmore.work',
-        links: {
-            liveUrl: 'https://snowmore.work'
-        },
-        license: {
-            name: 'Proprietary / Free Web App',
-            summary: 'Open-access utility calculator for home service pros and homeowners.'
-        },
-        pricing: [
-            {
-                plan: 'Online Calculator',
-                price: 'FREE',
-                description: 'Instant snow removal price estimates.',
-                badge: 'Free'
-            }
-        ]
-    },
-    {
         id: 'ramen-nights',
         title: 'Ramen Nights & Budget Bites',
         tagline: 'Tokyo Economics Capstone Tycoon — Culinary Strategy, Supply Chains & 16-Bit Nostalgia',
         description: 'The lecture halls of Tokyo University are famous for rigorous theory, but the Department of Economics has just rolled out its most grueling capstone challenge in history. Welcome to Ramen Nights & Budget Bites, an immersive culinary management strategy game where textbook economic theories clash with the fast-paced reality of Tokyo’s competitive restaurant industry.\n\nYour objective is simple on paper, yet brutal in execution: to graduate with your master\'s degree, you and your group of elite postgraduate classmates must found, operate, and scale a profitable ramen shop franchise across five iconic Tokyo districts. Starting with minimal capital and a bare-bones cart in a cramped alley, you must apply macroeconomic principles, supply chain logistics, and micro-pricing strategies to scale up into a multi-district culinary empire.\n\nFeaturing five simulated Tokyo districts (from student hubs to high-throughput commuter stations and luxury Ginza storefronts), dynamic classmate recruitment with dedicated skill trees, a custom broth & tare recipe lab, real-time balance sheet financial dashboards, day/night shift cycles, and weather-driven demand—engineered entirely from scratch with zero runtime dependencies on pure HTML5 Canvas and Web Audio chiptunes.',
         category: 'Games & Entertainment',
         tags: ['Simulation', 'Tycoon', 'Economics', 'JRPG', 'Chiptune', 'HTML5 Canvas'],
-        status: 'LIVE',
+        status: 'Live',
         url: 'https://tehwiz.itch.io/ramen-nights-and-budget-bites',
+        coverImage: 'https://ramen.tehwiz.com/cover.png',
+        favicon: 'https://ramen.tehwiz.com/icon-192.png',
         hook: 'Where textbook economic theory clashes with Tokyo’s cutthroat restaurant industry. Scale from a cramped alley cart to a five-district empire to graduate.',
         agitation: 'Tired of superficial restaurant tycoons hiding zero-strategy gameplay behind artificial energy meters, predatory timers, and pay-to-win microtransactions?',
         enemyFriction: 'Most modern culinary sims are predatory cash grabs: Skinner boxes engineered to gate progress behind microtransactions rather than rewarding genuine market insight, pricing strategy, and operational mastery.',
@@ -583,56 +546,6 @@ export const MOCK_PROJECTS: Project[] = [
         architectureNotes: 'Engineered as a zero-dependency software architecture showcase: pure vanilla HTML5 Canvas 2D rendering and dynamic procedural chiptune synthesis via the native Web Audio API. Zero external runtime dependencies (no Phaser, no PixiJS, no sound frameworks). Features deterministic state management, persistent local storage save-states with transactional integrity, and zero telemetry or server calls for total offline sovereignty.'
     },
     {
-        id: 'pocket-monstars',
-        title: 'Pocket Mon$tar$$$',
-        tagline: 'Pokemon-Themed Idle Clicker Game & Monster Vault',
-        description: 'Pokemon-Themed Idle Clicker Game. Gotta Click \'Em All. Upgrade capture balls, discover legendary spawns, and amass monster fortunes.',
-        category: 'Games & Entertainment',
-        tags: ['Idle Game', 'Clicker', 'HTML5 Game'],
-        status: 'MVP',
-        url: 'https://pokemans.tehwiz.com',
-        links: {
-            liveUrl: 'https://pokemans.tehwiz.com'
-        },
-        license: {
-            name: 'Proprietary / Fan Project',
-            summary: 'Free non-commercial fan demonstration game.'
-        },
-        pricing: [
-            {
-                plan: 'Free Play',
-                price: 'FREE',
-                description: '100% free web game.',
-                badge: 'Free'
-            }
-        ]
-    },
-    {
-        id: 'michael-scott-homes',
-        title: 'Michael Scott Homes',
-        tagline: 'Modern Home Improvement Lead Magnet / Calculator & CRM',
-        description: 'Modern Home Improvement Lead Magnet / Calculator & CRM. That\'s What She Said. Calculates room remodeling estimates with viral customer onboarding funnels.',
-        category: 'PropTech & Lead Generation',
-        tags: ['CRM', 'Lead Magnet', 'Calculator', 'Home Improvement'],
-        status: 'ALPHA',
-        url: 'https://michaelscott.homes',
-        links: {
-            liveUrl: 'https://michaelscott.homes'
-        },
-        license: {
-            name: 'Proprietary / Commercial SaaS',
-            summary: 'Turnkey lead capture funnels for contracting and renovation businesses.'
-        },
-        pricing: [
-            {
-                plan: 'Lead Engine',
-                price: 'Custom',
-                description: 'Custom lead capture calculators and CRM sync.',
-                badge: 'Commercial'
-            }
-        ]
-    },
-    {
         id: 'alchememe',
         title: 'Alchememe OS',
         tagline: 'Small Business Tax Shield Operating System & Augusta Rule Engine',
@@ -646,9 +559,11 @@ export const MOCK_PROJECTS: Project[] = [
         enemyFriction: 'Small business owners and real estate professionals overpay tens of thousands in taxes every year because tracking complex deductions like the Section 280A Augusta Rule or Real Estate Professional Status (REPS) requires messy spreadsheets, calendar cross-referencing, and expensive CPAs.',
         uniqueMechanism: 'An iOS-themed desktop operating system that runs inside any browser. Combines automated §280A rental day logs, REPS material participation counters, live banking and virtual card controls via Teller.io, and invoicing into a unified workspace.',
         transformation: 'Solopreneurs and S-Corp owners extract $10,000 to $14,000 in legal, tax-free rental income from their personal residences without spending hundreds on disparate accounting software.',
-        links: {
-            liveUrl: 'https://alchememe.com'
+        redirect: {
+            to: 'https://tehwiz.com/blog/alchememe-sunset-postmortem',
+            note: 'alchememe.com now redirects to the sunset postmortem — this is a redirect pointer, no external launch.'
         },
+        links: {},
         license: {
             name: 'Proprietary / SaaS',
             summary: 'Flat-rate SaaS tax-shield alternative offering native tax-saving automation.'
@@ -680,6 +595,244 @@ export const MOCK_PROJECTS: Project[] = [
             { label: 'Banking Integration', value: 'Teller.io Real-Time API & Virtual Card Controls' },
             { label: 'UI Paradigm', value: 'Windowed In-Browser Desktop OS' },
             { label: 'Value Metric', value: 'Extract $10,000–$14,000 in legal tax-free rental income' }
+        ]
+    },
+    {
+        id: 'bleep',
+        title: 'Bleep',
+        tagline: '$!#? Cash Machine — mechanical stepper slot simulation',
+        description: 'High-fidelity mechanical stepper casino slot simulation in React 19 and Pixi.js v8. Win-what-you-see number reels, Red Spin second-chance respins, a multiplier Wheel Bonus, and provably fair SHA-256 outcome commitments.',
+        category: 'Games & Entertainment',
+        tags: ['Slot Sim', 'Pixi.js', 'React 19', 'Web Game'],
+        status: 'Live',
+        url: 'https://bleep.tehwiz.com',
+        coverImage: 'https://hoytnix.github.io/Bleep/cover.png',
+        favicon: 'https://hoytnix.github.io/Bleep/cover.png',
+        links: {
+            liveUrl: 'https://bleep.tehwiz.com',
+            githubUrl: 'https://github.com/hoytnix/Bleep'
+        },
+        license: {
+            name: 'MIT License',
+            url: 'https://github.com/hoytnix/Bleep/blob/main/LICENSE',
+            summary: 'Free and open-source (MIT).'
+        },
+        pricing: [],
+        highlights: [
+            'Win-what-you-see number reels: 1¢, 10¢, $1 and high-roller denominations.',
+            'Red Spin second-chance respins and multiplier Wheel Bonus events.',
+            'Provably fair deterministic outcomes via SHA-256 commitments.'
+        ],
+        specs: [
+            { label: 'Renderer', value: 'Pixi.js v8 WebGL/WebGPU 60fps' },
+            { label: 'Framework', value: 'React 19 + TypeScript' },
+            { label: 'Fairness', value: 'SHA-256 server-seed commitments' }
+        ]
+    },
+    {
+        id: 'book-purple-canary',
+        title: 'What Was In That Joint Bro!?',
+        tagline: 'The Purple Canary companion e-book and field guide',
+        description: 'The official Purple Canary Lab e-reader: a harm-reduction field guide and companion book to the Purple Canary forensic scanner, published by TehWiz Productions.',
+        category: 'Harm Reduction & Publishing',
+        tags: ['E-book', 'Harm Reduction', 'Field Guide', 'E-reader'],
+        status: 'Live',
+        url: 'https://book.purplecanarylab.com',
+        coverImage: 'https://book.purplecanarylab.com/cover.png',
+        favicon: 'https://book.purplecanarylab.com/logo.png',
+        links: {
+            liveUrl: 'https://book.purplecanarylab.com'
+        },
+        license: {
+            name: 'Proprietary',
+            summary: 'Companion e-book published by TehWiz Productions. License terms not verified — see summary report.'
+        },
+        pricing: [],
+        highlights: [
+            'Companion e-book to the Purple Canary forensic scanner.',
+            'In-browser e-reader with adjustable type and chapter navigation.'
+        ],
+        specs: [
+            { label: 'Format', value: 'In-browser e-reader' },
+            { label: 'Companion', value: 'Purple Canary forensic scanner' }
+        ]
+    },
+    {
+        id: 'fun',
+        title: 'F.U.N.',
+        tagline: 'F**k Ur Neighbor — 4-player trick-taking card game',
+        description: 'Cutthroat standalone 4-player trick-taking card game with a solitaire speed-race finale. Hearts are trump, royalty bleeds points, and the Queen of Hearts is sudden death — against AI bots, local pass-and-play, or the guided tutorial. 100% client-side and offline-ready.',
+        category: 'Games & Entertainment',
+        tags: ['Card Game', 'Trick-Taking', 'PWA', 'Offline-First'],
+        status: 'Live',
+        url: 'https://fun.tehwiz.com',
+        favicon: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230f172a'/><text x='50' y='65' font-size='50' text-anchor='middle'>🖕</text></svg>",
+        links: {
+            liveUrl: 'https://fun.tehwiz.com',
+            githubUrl: 'https://github.com/hoytnix/FUN-R3'
+        },
+        license: {
+            name: 'Proprietary',
+            summary: 'Free web game by TehWiz Productions. License terms not verified — see summary report.'
+        },
+        pricing: [],
+        highlights: [
+            'Four-round structure: Hearts, Royal Suite, Queen Sudden Death, Solitaire Race.',
+            'Single-player vs AI bots, local pass-and-play, and guided tutorial.',
+            'Zero servers: Web Workers, IndexedDB, Web Audio synthesis, offline PWA.'
+        ],
+        specs: [
+            { label: 'Players', value: '1 vs AI bots, or 4 local pass-and-play' },
+            { label: 'Architecture', value: '100% client-side SPA, zero backend' },
+            { label: 'Audio', value: 'Web Audio API procedural synthesis' }
+        ]
+    },
+    {
+        id: 'isicecakeoisis',
+        title: 'ISICECAKEOISIS',
+        tagline: 'Corporate — Business-to-Agent systems architecture',
+        description: 'The TehWiz holding company: ISICECAKEOISIS INC. engineers Business-to-Agent (B2A) systems — machine-legible APIs, MCP servers, agent skills, and tiny on-device models. The screen was the bottleneck; agents are the market.',
+        category: 'Corporate',
+        tags: ['B2A', 'Corporate', 'MCP', 'Agent Infrastructure'],
+        status: 'Live',
+        url: 'https://isicecakeoisis.com',
+        coverImage: 'https://i.ibb.co/3mrktB3R/504.png',
+        favicon: 'https://i.ibb.co/3mrktB3R/504.png',
+        links: {
+            liveUrl: 'https://isicecakeoisis.com'
+        },
+        license: {
+            name: 'Proprietary',
+            summary: 'Corporate holding entity. License terms not verified — see summary report.'
+        },
+        pricing: [],
+        highlights: [
+            'Business-to-Agent (B2A) systems architecture.',
+            'Machine-legible APIs, MCP servers, and agent skills as first-class products.'
+        ],
+        specs: [
+            { label: 'Entity', value: 'ISICECAKEOISIS INC.' },
+            { label: 'Thesis', value: 'Agents are the next interface' }
+        ]
+    },
+    {
+        id: 'kissav',
+        title: 'KISS AV',
+        tagline: 'The ultimate AFK security killswitch',
+        description: 'Obfuscated, cross-platform Rust security daemon that sweeps for hidden remote desktops and spoofed hardware input while your workstation sits idle — then triggers a native network killswitch the millisecond a breach is confirmed. v2.2.2, free and open source.',
+        category: 'Security & Endpoint Protection',
+        tags: ['Rust', 'Endpoint Security', 'Killswitch', 'AFK Detection'],
+        status: 'Live',
+        url: 'https://kissav.tehwiz.com',
+        coverImage: 'https://kissav.tehwiz.com/cover.jpg',
+        favicon: 'https://kissav.tehwiz.com/cover.jpg',
+        links: {
+            liveUrl: 'https://kissav.tehwiz.com',
+            githubUrl: 'https://github.com/hoytnix/KISS-AV'
+        },
+        license: {
+            name: 'GNU GPL v3',
+            url: 'https://github.com/hoytnix/KISS-AV/blob/main/LICENSE',
+            summary: 'Free and open-source under the GNU General Public License v3.'
+        },
+        pricing: [],
+        highlights: [
+            'Hidden desktop detection: HVNC, VNC, RDP, and spoofed input drivers.',
+            'Native network killswitch: Wi-Fi and Ethernet disabled on breach.',
+            'Zero-dependency native installers (.msi, .dmg, .deb) via cargo-packager.'
+        ],
+        specs: [
+            { label: 'Engine', value: 'Rust daemon, v2.2.2' },
+            { label: 'Hardening', value: 'Compile-time obfuscation, stripped symbols' },
+            { label: 'Response', value: 'Native network isolation on anomaly' }
+        ]
+    },
+    {
+        id: 'raiders',
+        title: 'Realm Raiders',
+        tagline: 'Asymmetric fantasy realm management on living parchment',
+        description: 'Rule a medieval sovereign from a royal desk on a living parchment map: four asymmetric factions, 20-tier building progression, a named villager roster, asynchronous PvP, and a 2.5D catapult siege minigame. Free in the browser — no downloads, no accounts.',
+        category: 'Games & Entertainment',
+        tags: ['Strategy', 'Fantasy', 'Async PvP', 'Browser Game'],
+        status: 'Live',
+        url: 'https://raiders.tehwiz.com',
+        coverImage: 'https://hoytnix.github.io/Realm-Raiders/cover.jpg',
+        favicon: 'https://raiders.tehwiz.com/favicon.svg',
+        links: {
+            liveUrl: 'https://raiders.tehwiz.com',
+            githubUrl: 'https://github.com/hoytnix/Realm-Raiders'
+        },
+        license: {
+            name: 'Proprietary',
+            summary: 'Free browser game by TehWiz Productions. License terms not verified — see summary report.'
+        },
+        pricing: [],
+        highlights: [
+            'Four asymmetric factions on a cyclic elemental combat matrix.',
+            '20-tier building progression tuned for ~700 hours of mastery.',
+            'Asynchronous PvP with war-council matchmaking and revenge ledger.'
+        ],
+        specs: [
+            { label: 'Map', value: '5x5 isometric settlement, SVG cartography' },
+            { label: 'Persistence', value: 'localStorage, deterministic offline catchup' },
+            { label: 'Audio', value: 'Web Audio API, zero audio assets' }
+        ]
+    },
+    {
+        id: 'terminally-skilled',
+        title: 'Terminally Skilled',
+        tagline: 'Multi-asset agentic financial MUD for AI agent swarms',
+        description: 'A live multi-asset financial MUD built for autonomous agents: register, fund a session on Solana, trade crypto, equities and forex, or compete in pooled ante pots over MCP and REST. Season 1 live — 4,200 free calls per new agent.',
+        category: 'Agentic Finance & AI Systems',
+        tags: ['MUD', 'MCP', 'Agentic Finance', 'Solana'],
+        status: 'Live',
+        url: 'https://terminallyskilled.rest',
+        coverImage: 'https://terminallyskilled.rest/icon.jpg',
+        favicon: 'https://terminallyskilled.rest/icon.jpg',
+        featured: true,
+        links: {
+            liveUrl: 'https://terminallyskilled.rest'
+        },
+        license: {
+            name: 'Proprietary',
+            summary: 'Agentic financial MUD by TehWiz Productions. License terms not verified — see summary report.'
+        },
+        pricing: [],
+        highlights: [
+            'Multi-asset agentic MUD: crypto, equities, forex, pooled ante pots.',
+            'Stateless HTTP MCP server with 12 gameplay tools and skill.md manual.',
+            'x402 session funding on Solana; 4,200 free calls for Season 1 agents.'
+        ],
+        specs: [
+            { label: 'Ledger', value: 'Integer μUSDC, $420.69 paper bankroll' },
+            { label: 'Toll', value: '10 μUSDC per metered call' },
+            { label: 'Interface', value: 'MCP + REST, skill.md agent manual' }
+        ]
+    },
+    {
+        id: 'tricks-wiki',
+        title: 'Tricks Wiki',
+        tagline: 'Redirect — folded into tehwiz.com',
+        description: 'The former tricks.wiki knowledge base now redirects to tehwiz.com. Kept as a redirect pointer so old links resolve to the live site instead of dying.',
+        category: 'Knowledge & Reference',
+        tags: ['Wiki', 'Redirect', 'Reference'],
+        status: 'Deprecated',
+        url: 'https://tricks.wiki',
+        redirect: {
+            to: 'https://tehwiz.com',
+            note: 'tricks.wiki now redirects to tehwiz.com — this is a redirect pointer, no external launch.'
+        },
+        links: {},
+        license: {
+            name: 'Proprietary',
+            summary: 'Redirect pointer. License terms not verified — see summary report.'
+        },
+        pricing: [],
+        highlights: [
+            'Redirect pointer preserving old tricks.wiki links.'
+        ],
+        specs: [
+            { label: 'Status', value: '301 redirect to tehwiz.com' }
         ]
     }
 ];

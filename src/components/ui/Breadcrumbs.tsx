@@ -21,30 +21,24 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, className = '' 
   return (
     <nav 
       aria-label="Breadcrumb"
-      className={`flex items-center gap-2 text-xs font-mono text-slate-400 ${className}`}
+      className={`flex items-center gap-2 text-xs text-muted ${className}`}
     >
       {allItems.map((item, idx) => {
         const isLast = idx === allItems.length - 1;
 
         return (
           <React.Fragment key={idx}>
-            {idx > 0 && <span className="text-slate-600 select-none">/</span>}
+            {idx > 0 && <span className="text-edge select-none">/</span>}
             
             {item.href && !isLast ? (
               <Link
                 href={item.href}
-                className="hover:text-white text-slate-400 transition-colors flex items-center gap-1 cursor-pointer"
+                className="hover:text-bone text-muted transition-colors flex items-center gap-1 cursor-pointer"
               >
-                {item.icon && (
-                  <span className="material-icons text-[13px] text-indigo-400">{item.icon}</span>
-                )}
                 <span>{item.label}</span>
               </Link>
             ) : (
-              <span className={`flex items-center gap-1 font-semibold ${isLast ? 'text-indigo-300' : 'text-slate-300'}`}>
-                {item.icon && (
-                  <span className="material-icons text-[13px] text-indigo-400">{item.icon}</span>
-                )}
+              <span className={`flex items-center gap-1 ${isLast ? 'text-bone' : 'text-muted'}`}>
                 <span>{item.label}</span>
               </span>
             )}

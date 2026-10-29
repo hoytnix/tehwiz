@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google';
+import { Fraunces, Inter, JetBrains_Mono } from 'next/font/google';
 import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/react';
 import { Shell } from '@/components/layout/Shell';
@@ -7,11 +7,19 @@ import { RootJsonLd } from '@/components/seo/JsonLd';
 import { SITE_CONFIG } from '@/config/site';
 import './globals.css';
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-sans',
   display: 'swap',
-  weight: ['300', '400', '500', '600', '700', '800']
+  weight: ['400', '500', '600', '700']
+});
+
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  variable: '--font-display',
+  display: 'swap',
+  weight: ['400', '500', '600'],
+  style: ['normal', 'italic']
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -22,7 +30,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const viewport: Viewport = {
-  themeColor: '#030712',
+  themeColor: '#0A0B10',
   width: 'device-width',
   initialScale: 1
 };
@@ -72,20 +80,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${plusJakartaSans.variable} ${jetbrainsMono.variable} dark`}>
+    <html lang="en" className={`${inter.variable} ${fraunces.variable} ${jetbrainsMono.variable} dark`}>
       <head>
-        {/* Material Icons */}
-        <link 
-          rel="stylesheet" 
-          href="https://fonts.googleapis.com/icon?family=Material+Icons" 
+        {/* Material Icons (legacy secondary pages only; primary views use text glyphs) */}
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
         />
         {/* PrismJS Okaidia Theme */}
-        <link 
-          rel="stylesheet" 
-          href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" 
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css"
         />
       </head>
-      <body className="bg-void text-slate-100 antialiased overflow-hidden selection:bg-indigo-500/30 selection:text-white">
+      <body className="bg-ink text-muted antialiased overflow-hidden">
         <RootJsonLd />
         <Shell>
           {children}
@@ -93,13 +101,13 @@ export default function RootLayout({
         <Analytics />
 
         {/* Prism Core & Autoloader */}
-        <Script 
-          src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" 
-          strategy="afterInteractive" 
+        <Script
+          src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+          strategy="afterInteractive"
         />
-        <Script 
-          src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js" 
-          strategy="afterInteractive" 
+        <Script
+          src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"
+          strategy="afterInteractive"
         />
       </body>
     </html>

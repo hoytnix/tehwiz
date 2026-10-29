@@ -4,16 +4,12 @@ import { useState, useMemo } from 'react';
 import { PortfolioItem } from '@/types';
 
 const STATUS_PRIORITY: Record<string, number> = {
-  'LIVE': 1,
-  'MVP': 2,
-  'BETA': 3,
-  'ALPHA': 4,
-  'PRE-ALPHA': 5,
-  'POC': 6,
-  'CLASSIFIED': 7,
-  'ARCHIVED': 8,
-  'Deprecated': 9,
-  'DEPRECATED': 9
+  'Live': 1,
+  'Beta': 2,
+  'MVP': 3,
+  'Alpha': 4,
+  'POC': 5,
+  'Deprecated': 6
 };
 
 export const usePortfolioFilter = (projects: PortfolioItem[]) => {
