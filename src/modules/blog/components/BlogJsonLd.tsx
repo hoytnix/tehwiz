@@ -1,6 +1,7 @@
 import React from 'react';
 import { BlogPost } from '../types';
 import { SITE_CONFIG } from '@/config/site';
+import { CONTACT_EMAIL_BUTTON_MARKER } from './RevealEmailButton';
 
 export interface ArticleJsonLdProps {
   post: BlogPost;
@@ -42,7 +43,11 @@ export const ArticleJsonLd: React.FC<ArticleJsonLdProps> = ({ post }) => {
         headline: post.title,
         name: post.title,
         description: post.excerpt,
-        articleBody: post.content.replace(/\r\n/g, '\n').trim(),
+        articleBody: post.content
+          .replace(/\r\n/g, '\n')
+          .split(CONTACT_EMAIL_BUTTON_MARKER)
+          .join('')
+          .trim(),
         wordCount: post.wordCount,
         timeRequired: `PT${post.readingTime}M`,
         keywords: post.tags.join(', '),

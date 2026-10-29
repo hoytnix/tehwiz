@@ -6,6 +6,10 @@ import { BlogPost } from '../types';
 import { MarkdownRenderer } from '@/components/ui/MarkdownRenderer';
 import { PermalinkButton } from '@/components/ui/PermalinkButton';
 import { ReadingProgressBar } from './ReadingProgressBar';
+import {
+  CONTACT_EMAIL_BUTTON_MARKER,
+  RevealEmailButton
+} from './RevealEmailButton';
 
 export interface BlogPostViewProps {
   post: BlogPost;
@@ -14,6 +18,12 @@ export interface BlogPostViewProps {
 
 export const BlogPostView: React.FC<BlogPostViewProps> = ({ post }) => {
   const containerRef = useRef<HTMLDivElement>(null);
+
+  // Posts may include the contact marker on its own line; the reveal button
+  // renders in its place so the address sits exactly where the text points.
+  const contentParts = post.content.includes(CONTACT_EMAIL_BUTTON_MARKER)
+    ? post.content.split(CONTACT_EMAIL_BUTTON_MARKER)
+    : [post.content];
 
   return (
     <article
@@ -81,7 +91,11 @@ export const BlogPostView: React.FC<BlogPostViewProps> = ({ post }) => {
 
         {/* Post Content */}
         <main className="text-slate-300">
-          <MarkdownRenderer content={post.content} />
+          <MarkdownRenderer content={contentParts[0]} />
+          {contentParts.length > 1 && <RevealEmailButton />}
+          {contentParts.slice(1).map((part, idx) => (
+            <MarkdownRenderer key={idx} content={part} />
+          ))}
         </main>
 
         {/* Article Footer Navigation */}

@@ -13,6 +13,8 @@ Portfolio is now 19 entries: removed Projects, SnowMore Work, Pocket
 Mon$tar$$$, Michael Scott Homes; added bleep, book.purplecanarylab.com,
 fun, isicecakeoisis (Corporate), kissav, raiders, terminallyskilled.rest,
 tricks.wiki (redirect); Yuli canonical launch is yuli.tehwiz.com.
+
+Current focus: OVH/Kimsufi/M247 block post live at /blog/why-we-blocked-ovh-kimsufi (created new 2026-10-29, leads data-driven listing) with click-to-reveal contact button (permuted char codes, click-handler-only decode). Verified green: pnpm build 38 pages, repo + .next grep clean, headless-Chrome CDP suite 11/11 (pre-click DOM, click, Enter, Space, single copy, slug 200).
 Project cards now show each live app's own cover art + favicon (from the
 app's JSON-LD image/logo and og:image / icon links, verified per origin;
 redirects and asset-less apps fall back to site-global cover/logo; failed

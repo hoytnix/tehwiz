@@ -7,3 +7,4 @@ export * from './components/BlogCard';
 export * from './components/BlogListView';
 export * from './components/BlogPostView';
 export * from './components/BlogJsonLd';
+export * from './components/RevealEmailButton';

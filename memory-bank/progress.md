@@ -32,3 +32,17 @@
   licenses for book/fun/isicecakeoisis/raiders/terminally-skilled/tricks-wiki;
   tricks-wiki status+category; Yuli hero artifact is a composed panel, not a
   real screenshot.
+- 2026-10-29: New blog post why-we-blocked-ovh-kimsufi (created new, no OVH-only
+  duplicate existed). Title "Why we blocked OVH, Kimsufi, and M247 — and how
+  legitimate visitors can still reach us", date 2026-10-29, author TehWiz
+  Productions. Article text published verbatim from brief, no new stats.
+  Prepended to BLOG_POSTS so it leads the data-driven /blog listing; sitemap
+  and RSS pick it up automatically, no listing/code changes needed.
+- 2026-10-29: Click-to-unscramble contact button (RevealEmailButton, wired into
+  BlogPostView via marker, stripped from JSON-LD articleBody): address stored
+  only as a permuted char-code array, decoded inside the click handler only —
+  never on render, mount, hover, or focus. Pre-click DOM has no address and no
+  link scheme; post-click renders a working link. Grep clean for address and
+  scheme in repo source and .next output; headless-Chrome CDP suite 11/11 green
+  (pre-click DOM, mouse click, Enter, Space, single listing copy, slug 200).
+  pnpm build green (38 pages).

@@ -2,6 +2,64 @@ import { BlogPost } from '../types';
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    id: 'why-we-blocked-ovh-kimsufi',
+    slug: 'why-we-blocked-ovh-kimsufi',
+    title: 'Why we blocked OVH, Kimsufi, and M247 — and how legitimate visitors can still reach us',
+    tagline: 'ASN-level blocks are the only version of this fight that scales for a small team. Real humans are still welcome here.',
+    excerpt: 'Automated scanners on cheap rented servers were hammering our sites around the clock, so we blocked OVH, Kimsufi, and M247 at the network level. Why we did it, what it does not touch, and how legitimate visitors can still reach us.',
+    author: {
+      name: 'TehWiz Productions',
+      handle: '@hoytnix',
+      role: 'TehWiz Productions',
+      url: 'https://github.com/hoytnix'
+    },
+    publishedAt: '2026-10-29',
+    readingTime: 4,
+    wordCount: 852,
+    tags: [
+      'Security',
+      'Cloudflare',
+      'Bot Mitigation',
+      'Edge Architecture',
+      'WAF',
+      'Indie Hacking'
+    ],
+    featured: true,
+    content: `
+This is not a post about France. It is not a post about OVH as a company. It is a post about a very specific, very boring problem: automated scanners, running on cheap rented servers, hammering our sites around the clock. We blocked OVH, Kimsufi, and M247 at the network level, on all our properties. If you are a real person, you almost certainly will not notice. If you do notice, this post explains why, and how to get in touch.
+
+## What we were seeing
+
+Across our portfolio, a huge share of traffic is not people. It is probes. In a recent 24-hour window, France was our top country at 40% of requests, our portfolio blocked 23.9% of all requests, and a single blog post — the Alchememe sunset postmortem — took 3,581 requests, with 3,231 of them blocked at 403. The probes are the same every day: \`/.env\`, \`/.git/config\`, \`/wp-admin/install.php\`, \`/phpinfo\`, \`/xmlrpc.php\`, and every other path that only makes sense if you are looking for a misconfigured server to break into. None of our sites are PHP sites. None of them will serve you an .env file. The scanners do not care. They try anyway, thousands of times a day. That was true before the PHP vulnerabilities disclosed in October 2026, and it got worse after them. Blocking individual IPs does not work. The scanners rotate IPs faster than we can list them. That is whack-a-mole, and we are a small team. We do not have time for whack-a-mole.
+
+## Why OVH, and why Kimsufi specifically
+
+OVHcloud is one of the largest hosting providers in Europe. Kimsufi is its budget dedicated-server brand: a whole server, root access, unlimited traffic, for very little money. That is a legitimate product, and it is also exactly the product a scanner fleet wants. Cheap, disposable, and easy to spin up in bulk. So instead of banning IPs one by one, we banned the networks those servers live on: OVH AS16276 and OVH-TELECOM AS35540. Kimsufi servers live on OVH's networks, so they are covered by the same block. If your traffic comes from those networks, you will get a 403 from our Cloudflare edge, on every property we run behind it.
+
+## Why M247, too
+
+M247 (AS9009) is the same pattern, on a different network: hosting and proxy infrastructure that shows up again and again in abuse data, including Spamhaus's botnet hosting reports, where it is a regular top-20 name. We added it for the same reason we added OVH: not because every M247 customer is abusive, but because, at our scale, blocking one network is cheaper than chasing its rotating IPs one by one. If your traffic comes from AS9009, you will get the same 403, on every property we run behind Cloudflare.
+
+## What this is not
+
+This is not a country block. French visitors are still welcome. If you are browsing from home in France on Orange, SFR, Free, or any other residential ISP, this block does not touch you. It only touches traffic originating from OVH's and M247's hosting networks. It is also not permanent in the sense that we will never revisit it. If the automated abuse from those networks drops to a level a small team can actually manage, we will revisit it. Right now, it does not.
+
+## If you have a legitimate reason to reach us
+
+We know there is a real edge case here, and we do not want to lose real people to it — you run a tool, an agent, a research project, or a game client on an OVH, Kimsufi, or M247 server and actually need to reach one of our sites or APIs; you are a developer, a customer, or a collaborator and your only current egress happens to be OVH or M247; or you hit a 403 and are not sure why. Then use the email button below.
+
+[[CONTACT_EMAIL_BUTTON]]
+
+Please include, if you can: (1) which site or API you were trying to reach, (2) roughly when you tried, in UTC if possible, (3) your IP address, if you know it, (4) what you were actually trying to do — read a page, call an API, play Terminally Skilled, test an integration, something else, (5) why OVH or M247 is your egress, if there is a reason.
+
+We will look at it case by case. That may mean a temporary allowlist, a different way to reach the same thing, or a suggestion to run that particular request from a non-OVH, non-M247 network. What it will not mean is an exception for credential probing, vulnerability scanning, or mass scraping. If that is what the traffic was, the block is doing its job.
+
+## The short version
+
+We did not block OVH, Kimsufi, or M247 because we dislike them. We blocked them because, right now, they are where a disproportionate share of the automated abuse against our sites comes from, and an ASN-level block is the only version of this fight that scales for a team our size. Real humans: you are still welcome here. If this block caught you by mistake, tell us, and we will sort it out.
+`
+  },
+  {
     id: 'blocking-the-skiddies-cloudflare-waf',
     slug: 'blocking-the-skiddies-cloudflare-waf',
     title: '600,000 Robots, 1 Human: Blocking the Skiddies With a Single Cloudflare WAF Rule',
