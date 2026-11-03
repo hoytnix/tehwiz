@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { CyberButton } from '@/components/ui/CyberButton';
 
+export const dynamic = 'force-static';
+
 export default function NotFound() {
   return (
     <div className="h-full w-full flex flex-col items-center justify-center p-6 text-center">

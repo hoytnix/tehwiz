@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { BLOG_POSTS } from '@/modules/blog/data/blogData';
 import { SITE_CONFIG } from '@/config/site';
 
+export const dynamic = 'force-static';
+
 export async function GET() {
   const itemsXml = BLOG_POSTS.map((post) => {
     const postUrl = `${SITE_CONFIG.url}/blog/${post.slug}`;
