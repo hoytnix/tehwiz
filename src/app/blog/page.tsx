@@ -1,6 +1,9 @@
+import { Suspense } from 'react';
 import { Metadata } from 'next';
 import { BLOG_POSTS, BlogListView, BlogListJsonLd } from '@/modules/blog';
 import { SITE_CONFIG } from '@/config/site';
+
+export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
   title: 'Engineering Blog // Sovereign AI, WebGPU & Edge Systems',
@@ -46,18 +49,13 @@ export const metadata: Metadata = {
   }
 };
 
-interface BlogPageProps {
-  searchParams?: Promise<{ tag?: string }>;
-}
-
-export default async function BlogPage({ searchParams }: BlogPageProps) {
-  const resolvedSearchParams = searchParams ? await searchParams : undefined;
-  const initialTag = resolvedSearchParams?.tag || null;
-
+export default function BlogPage() {
   return (
     <>
       <BlogListJsonLd posts={BLOG_POSTS} />
-      <BlogListView posts={BLOG_POSTS} initialTag={initialTag} />
+      <Suspense fallback={null}>
+        <BlogListView posts={BLOG_POSTS} />
+      </Suspense>
     </>
   );
 }

@@ -57,6 +57,16 @@ export const Header: React.FC = () => {
           >
             GitHub
           </a>
+          {process.env.NODE_ENV === 'development' && (
+            <Link
+              href="/editor"
+              className="ml-2 px-2.5 py-1 text-xs font-mono rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 hover:bg-emerald-500/20 transition-colors flex items-center gap-1.5"
+              title="Localhost Content Studio (Dev Only)"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>Editor</span>
+            </Link>
+          )}
         </nav>
       </div>
     </header>

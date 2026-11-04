@@ -1,5 +1,10 @@
 # Active Context — TehWiz
 
+Current focus: 100% Static HTML Export (GitHub Pages ready) + Localhost CRUD Studio.
+The entire TehWiz app now compiles to a purely static directory (`out/`) via `output: 'export'`, capable of being hosted completely free on GitHub Pages (with `.nojekyll`, `CNAME`, unoptimized images, and automated GitHub Actions workflow `.github/workflows/deploy.yml`).
+Content for Blog, Vlog, Portfolio Projects, and Prompts is stored in clean JSON files (`blogData.json`, `vlogData.json`, `portfolioData.json`, `promptsData.json`), maintaining typed parity with TypeScript modules.
+When running locally via `pnpm dev`, a localhost-only CRUD Content Studio is available at `/editor` (with a discrete dev badge in the Header) backed by a local Node.js API (`/api/admin`) allowing full Create, Read, Update, Delete with real-time disk persistence and instant Fast Refresh. During static export (`pnpm build`), all editor and admin routes are scrubbed so the public bundle contains zero dev artifacts. Verified green with `pnpm build` generating 40 static pages.
+
 Current focus: Quiet Instrument redesign complete and verified green.
 Replacing neon cyber-gamer chrome (aurora orbs, glass gradients, rainbow
 accents, pinging dots, emoji badges) with calm editorial dark system.

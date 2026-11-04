@@ -1,36 +1,4 @@
 import { VlogEntry } from '@/types';
+import vlogData from './vlogData.json';
 
-export const MOCK_ENTRIES: VlogEntry[] = [
-  {
-    id: 'aevloc-google-maps-demo',
-    title: 'Aevloc.com Demo | Boost Your Google Maps Rankings +40% For Less Than $0.50 A Day! | Reviews Firewall',
-    description: 'Boost Google Maps rankings by +40% with automated positive review routing and negative feedback firewall for local businesses.',
-    timestamp: new Date('2026-09-20T12:00:00Z').getTime(),
-    videoUri: 'https://www.youtube.com/watch?v=mUc05SgVwX8',
-    thumbnailUrl: 'https://i.ytimg.com/vi/mUc05SgVwX8/hqdefault.jpg'
-  },
-  {
-    id: 'shohei-ohtani-card-tifu',
-    title: 'TIFU Throwback | I Sold My SHOHEI OHTANI 1/1 RC AUTO (FIRST TOPPS AUTOGRAPH) For A Chicken Dinner 🤢',
-    description: 'TIFU throwback card story: Selling the Shohei Ohtani 1/1 Rookie Card Auto for a chicken dinner before historical records shattered.',
-    timestamp: new Date('2026-09-20T11:00:00Z').getTime(),
-    videoUri: 'https://youtube.com/shorts/-D8UJ-5WKCk',
-    thumbnailUrl: 'https://i.ytimg.com/vi/-D8UJ-5WKCk/hqdefault.jpg'
-  },
-  {
-    id: 'steoki-mystery-box',
-    title: "🗑️ $600 Steve Aoki Mystery Box !? WTF 😒 Steve Aoki Invitation To Jeffrey Epstein's Island Or What.??",
-    description: 'Unboxing and honest review of the $600 Steve Aoki mystery box and bizarre memorabilia contents.',
-    timestamp: new Date('2026-03-16T12:00:00Z').getTime(),
-    videoUri: 'https://youtube.com/shorts/14VLL_bFvTM',
-    thumbnailUrl: 'https://i.ytimg.com/vi/14VLL_bFvTM/hqdefault.jpg'
-  },
-  {
-    id: 'ep-2-vibe-code',
-    title: '[Ep. 2] Vibe Code 101: Budget Bites & Ramen Nights Development Log | Zero-to-App Store AI Game Vibes',
-    description: 'Development log for the Ramen Nights idle clicker game. From zero to App Store using AI workflows.',
-    timestamp: new Date('2025-04-07T12:00:00Z').getTime(),
-    videoUri: 'https://www.youtube.com/watch?v=5UEtgV8X3YY',
-    thumbnailUrl: 'https://i.ytimg.com/vi/5UEtgV8X3YY/hqdefault.jpg'
-  }
-];
+export const MOCK_ENTRIES: VlogEntry[] = vlogData as VlogEntry[];

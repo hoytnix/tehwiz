@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { BlogPost, TagCount } from '../types';
 import { BlogCard } from './BlogCard';
 import { TagCloud } from './TagCloud';
@@ -17,8 +18,10 @@ export const BlogListView: React.FC<BlogListViewProps> = ({
   posts,
   initialTag = null
 }) => {
+  const searchParams = useSearchParams();
+  const urlTag = searchParams?.get('tag') ?? null;
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedTag, setSelectedTag] = useState<string | null>(initialTag);
+  const [selectedTag, setSelectedTag] = useState<string | null>(initialTag || urlTag);
 
   // Compute tag counts dynamically
   const tagCounts: TagCount[] = useMemo(() => {

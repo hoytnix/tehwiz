@@ -1,5 +1,19 @@
 # Progress — TehWiz
 
+- 2026-11-04: Full Static Site Generation (SSG export for GitHub Pages) +
+  Localhost CRUD Content Studio.
+  - Enabled `output: 'export'` and `images: { unoptimized: true }` in `next.config.ts`.
+  - Migrated `/blog` search params handling to client Suspense boundary so it
+    prerenders 100% statically alongside dynamic sitemap and feeds.
+  - Extracted Vlog, Prompts, Blog, and Portfolio data into clean JSON files
+    with zero loss of structure or types, hot-reloading in dev.
+  - Created Localhost Content Studio at `/editor` and API at `/api/admin` with
+    host/origin guard, allowing full CRUD with direct filesystem persistence.
+  - Added build scrubbing (`scripts/clean-export.js`) removing dev editor/admin
+    artifacts from `out/`, added `public/.nojekyll`, `public/CNAME`, and
+    `.github/workflows/deploy.yml` for automated GitHub Pages deployment.
+  - `pnpm build` verified 100% green (40 static pages).
+
 - 2026-10-22: Design audit. Found every anti-pattern: 5+ neon accents,
   3 aurora orbs + grid in Shell, gradient headline text, gradient buttons,
   glass everywhere, rounded-2xl/3xl everywhere, ping/emoji/scale hovers.
