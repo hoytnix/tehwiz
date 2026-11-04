@@ -5,6 +5,12 @@
 /* Sovereign console theme — quiet dark, single violet accent, amber for Live only. */
 
 @layer base {
+  :root {
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
   * {
     box-sizing: border-box;
   }
