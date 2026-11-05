@@ -6,7 +6,7 @@ export const TelemetryFooter: React.FC = () => {
     <footer className="shrink-0 border-t border-edge bg-ink">
       <div className="max-w-magazine mx-auto px-6 lg:px-16 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-sm text-muted">
         <span>
-          © 2026 ISICECAKEOISIS. A TehWiz Production.
+          Copyright (C) 2026 <a href="https://isicecakeoisis.com" target="_blank" rel="noopener">ISICECAKEOISIS</a>. A <a href="https://tehwiz.com" target="_blank" rel="noopener">TehWiz Production</a>.
         </span>
         <span>
           <a
